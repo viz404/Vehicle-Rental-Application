@@ -1,0 +1,114 @@
+{
+    "cars": [
+        {
+            "car-name": "Hyundai Eon (Petrol)",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Petrol",
+            "price": 2362,
+            "max-age": 21
+        },
+        {
+            "car-name": "Hundai grand I10",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2572,
+            "max-age": 21
+        },
+        {
+            "car-name": "TATA Tiago",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2572,
+            "max-age": 21
+        },
+        {
+            "car-name": "Maruti Swift VDI (Diesel)",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2572,
+            "max-age": 21
+        },
+        {
+            "car-name": "Maruti Suzuki Baleno",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2762,
+            "max-age": 60
+        },
+        {
+            "car-name": "Maruti Suzuki Baleno (Petrol)",
+            "car-type": "Hatchback",
+            "transmission-type": "Manual",
+            "fuel-type": "Petrol",
+            "price": 2412,
+            "max-age": 60
+        },
+        {
+            "car-name": "Maruti Suzuki Celeio ZXI",
+            "car-type": "Hatchback",
+            "transmission-type": "Automatic",
+            "fuel-type": "Petrol",
+            "price": 2319,
+            "max-age": 60
+        },
+        {
+            "car-name": "Hundai grand I10 (Automatic)",
+            "car-type": "Hatchback",
+            "transmission-type": "Automatic",
+            "fuel-type": "Petrol",
+            "price": 2585,
+            "max-age": 60
+        },
+        {
+            "car-name": "Ford Aspire",
+            "car-type": "Sedan",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2446,
+            "max-age": 60
+        },
+        {
+            "car-name": "Brezza LDI",
+            "car-type": "SUV",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 2446,
+            "max-age": 60
+        },
+        {
+            "car-name": "Ford Ecosport Trend",
+            "car-type": "Mini SUV",
+            "transmission-type": "Manual",
+            "fuel-type": "Diesel",
+            "price": 3273,
+            "max-age": 60
+        }
+    ],
+    "bikes": [
+        {
+            "bike-name": "Honda Activa",
+            "transmission-type": "Gearless",
+            "engine-capacity": 109
+        },
+        {
+            "bike-name": "Honda Grazia",
+            "transmission-type": "Gearless",
+            "engine-capacity": 125
+        },
+        {
+            "bike-name": "Honda CB Hornet 160R",
+            "transmission-type": "Geared",
+            "engine-capacity": 160
+        },
+        {
+            "bike-name": "Honda XBlade",
+            "transmission-type": "Geared",
+            "engine-capacity": 162
+        }
+    ]
+}
