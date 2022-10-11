@@ -195,7 +195,15 @@
                 </div>
                 <div class="search-location">
                     <p style="color:#77899b">I need my vehicle near</p>
-                    <input id="input-bar" type="text" placeholder="Type or select your location here">
+                    <!-- <input id="input-bar" type="text" placeholder="Type or select your location here"> -->
+                    <select name="input-bar" id="input-bar">
+                        <option value="" style="color:#77899b">Type or select your location here</option>
+                        <option value="Bellandur (New)">Bellandur (New)</option>
+                        <option value="Bommanahalli">Bommanahalli</option>
+                        <option value="Mathikere">Mathikere</option>
+                        <option value="Manpho Convention Center (New)">Manpho Convention Center (New)</option>
+                        <option value="Ashwath Nagar (HBR Layout)">Ashwath Nagar (HBR Layout)</option>
+                    </select>
                 </div>
                 <button class="searchBtn" id="searchBtn">Search</button>
             </div>
@@ -440,13 +448,14 @@
     function closeCareer() {
         careerpop.style.display = "none";
     }
-
+    let current_vehicle = "car";
     var car = document.getElementById("car");
     car.addEventListener("click", changeToCar);
 
     function changeToCar() {
         car.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509635_group-3%403x.png";
         bike.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565933919_bike.svg";
+        current_vehicle = "car";
     }
 
     var bike = document.getElementById("bike");
@@ -455,39 +464,34 @@
     function changeToBike() {
         bike.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509998_group-2%403x.png";
         car.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565935736_car2.svg";
+        current_vehicle = "bike";
     }
 
     var searchBtn = document.getElementById("searchBtn");
     searchBtn.addEventListener("click", setData);
+    
 
     function setData() {
-        var location = document.getElementById("input-bar").value;
-        var car = document.getElementById("car");
-        var bike = document.getElementById("bike");
-        car.addEventListener("click", selectCar);
-        var vehicle = "";
-        function selectCar() {
-            vehicle = car.id;
-            return vehicle;
-        }
-        bike.addEventListener("click", selectBike);
-        function selectBike() {
-            vehicle = bike.id;
-            return vehicle;
-        }
-        console.log(vehicle);
+        var location = document.getElementById("input-bar").value; 
+        console.log(current_vehicle);
         console.log(location);
         let d = new Date();
-        let pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-        let drop = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+(d.getDate()+1);
+        let pickup = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+        let md = addDays(new Date(), 1);
+        let drop = md.getFullYear() + "-" + (md.getMonth() + 1) + "-" + (md.getDate());
 
         let obj = {
-            vehicle: vehicle,
+            vehicle: current_vehicle,
             location: location,
             pickup: pickup,
             drop: drop
         }
         localStorage.setItem("search_query", JSON.stringify(obj));
+    }
+    function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
     }
 
 </script>

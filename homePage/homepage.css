@@ -417,7 +417,7 @@ ul > li {
 .search-location {
     padding-left: 20px;
 }
-.search-location > input {
+.search-location > select {
     padding: 20px;
     margin-top: -5px;
     width: 500px;
