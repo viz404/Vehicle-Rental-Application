@@ -338,9 +338,16 @@ btn_duration_7.onclick = () => {
     btn_duration_7.style.border = "1px solid #12967e";
     btn_duration_7.style.color = "#12967e";
 
-    let arr = products.filter(element => element.vehicle == search_query.vehicle);
 
-    arr.forEach(element => element.price += 1000);
+    let arr = products.map(element => {
+        return Object.assign({}, element);
+    })
+
+    arr = arr.filter(element => element.vehicle == search_query.vehicle);
+
+    arr = arr.map(element => {{
+        return {...element, price: element.price += 1000};
+    }});
 
     displayData(arr);
 
@@ -365,9 +372,15 @@ btn_duration_15.onclick = () => {
     btn_duration_15.style.border = "1px solid #12967e";
     btn_duration_15.style.color = "#12967e";
 
-    let arr = products.filter(element => element.vehicle == search_query.vehicle);
+    let arr = products.map(element => {
+        return Object.assign({}, element);
+    })
 
-    arr.forEach(element => element.price += 5000);
+    arr = arr.filter(element => element.vehicle == search_query.vehicle);
+
+    arr = arr.map(element => {{
+        return {...element, price: element.price += 5000};
+    }});
 
     displayData(arr);
 
@@ -392,9 +405,15 @@ btn_duration_30.onclick = () => {
     btn_duration_30.style.border = "1px solid #12967e";
     btn_duration_30.style.color = "#12967e";
 
-    let arr = products.filter(element => element.vehicle == search_query.vehicle);
+    let arr = products.map(element => {
+        return Object.assign({}, element);
+    })
 
-    arr.forEach(element => element.price += 10000);
+    arr = arr.filter(element => element.vehicle == search_query.vehicle);
+
+    arr = arr.map(element => {{
+        return {...element, price: element.price += 10000};
+    }});
 
     displayData(arr);
 
