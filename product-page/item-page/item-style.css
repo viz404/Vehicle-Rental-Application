@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'adelle_rgregular';
+    src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
+    src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* navbar */
+
+.container {
+    width: 70%;
+    margin: auto;
+    max-width: 1350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftbar,
+.rightbar {
+    display: flex;
+}
+
+.country {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.country img,
+.myplans img {
+    margin-right: 10px;
+}
+
+.city {
+    display: flex;
+    cursor: pointer;
+}
+
+.earnwithus,
+.careers {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.myplans {
+    display: flex;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#drivezy-logo,
+#myprofile {
+    cursor: pointer;
+}
+
+/* search bar */
+
+#search-bar>form {
+    display: grid;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 1320px;
+    margin: 20px auto auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: rgb(193 189 189) 0px 2px 9px 2px;
+}
+
+#search-bar>form>div:first-child>div {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 20px;
+    width: 200px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+}
+
+#search-bar #car-icon {
+    width: 70px;
+    display: block;
+    margin-left: 20px;
+}
+
+#search-bar #bike-icon {
+    width: 70px;
+    display: block;
+    border-left: 1px solid rgb(190, 190, 190);
+    padding-left: 20px;
+}
+
+#search-bar button {
+    width: 140px;
+    height: 50px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+    background-color: #41bca6;
+    color: white;
+    font-weight: bold;
+}
+
+#search-bar p {
+    font-size: 12px;
+    margin-top: 0;
+    white-space: nowrap;
+    color: #7b7b7b;
+}
+
+#search-bar select {
+    width: 400px;
+    height: 50px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+#search-bar input {
+    text-align: center;
+    padding: 20px;
+    font-size: larger;
+    width: 227px;
+    height: 50px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+    color: #7b7b7b;
+}
+
+.item-container {
+    display: flex;
+    width: 1320px;
+    margin: 20px auto;
+    justify-content: space-between;
+    border-radius: 10px;
+    gap: 25px;
+}
+
+.left-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    width: 70%;
+}
+
+.product-desc {
+    display: flex;
+    height: 140px;
+}
+
+.product-desc {
+    border-bottom: 1px solid rgb(213, 211, 211);
+}
+
+.product-desc > div:last-child {
+   padding: 20px;
+}
+
+.product-desc > div > div img {
+    position: relative;
+    top: 3px;
+}
+
+#car-image {
+    width: 150px;
+}
+
+.product-desc span {
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.product-desc > div:first-child {
+    padding-right: 100px;
+}
+
+.note {
+    font-size: 12px;
+    color: #7b7b7b;
+}
+
+.fuel-info {
+    border-bottom: 1px solid rgb(213, 211, 211);
+    margin-top: 30px;
+    height: 130px;
+}
+
+.fuel-info > p:first-child {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.fuel-info > div {
+    border: 1px solid black;
+    width: 290px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    background-color: #ecf0f5;
+    justify-content: space-between;
+}
+
+.fuel-info span {
+    align-self: center;
+    font-size: 13px;
+    color: #77899b;
+    margin-left: 20px;
+}
+
+.fuel-info select {
+    width: 50%;
+    border: none;
+    color: rgb(22, 181, 197);
+    font-size: 17px;
+    border-radius: 0 5px 5px 0;
+}
+
+.pickupdrop {
+    margin-top: 20px;
+}
+
+.timing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.timing > div {
+    display: flex;
+    border: 1px solid black;
+}
+
+.timing > div:nth-child(2) {
+    display: block;
+    width: 30%;
+}
+
+.timing > div:last-child {
+    text-align: right;
+}
+
+.date-style {
+    text-align: center;
+    height: 60px;
+}
+
+.date-style > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.date-style > div:first-child {
+    font-size: 55px;
+}
+
+#drop-month, #pickup-month {
+    color: #7b7b7b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    height: fit-content;
+    width: 30%;
+}
