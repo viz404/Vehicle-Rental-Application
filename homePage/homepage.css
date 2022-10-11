@@ -1,0 +1,520 @@
+/* navbar */
+body {
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 10px;
+    color: #1f2d3d;
+    font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+}
+.container {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.leftbar, .rightbar {
+    display: flex;
+}
+.country {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.country img, .myplans img {
+    margin-right: 10px;
+}
+.city {
+    display: flex;
+    cursor: pointer;
+} 
+.earnwithus, .careers {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.myplans {
+    display: flex;
+    cursor: pointer;
+    margin-right: 30px;
+}
+#drivezy-logo,  #myprofile {
+    cursor: pointer;
+}
+#drivezy-logo {
+    margin-left: 70px;
+}
+
+/* fixed bar section */ 
+.fixed {
+    width: 1500px;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f15d61;
+    color: white;
+    display: block;
+}
+.fixed h4 {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+.cancelBtn {
+    color: #fff;
+    cursor: pointer;
+    font-weight: bolder;
+}
+ /* earn pop */ 
+ .earn-pop {
+    width: 392px;
+    height: 108;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: absolute;
+    margin-left: 700px;
+    margin-top: -10px;
+    display: none;
+    background-color: white;
+ }
+ .share-business, .list-vehicle {
+    display: flex;
+    cursor: pointer;
+ }
+ .share-business:hover, .list-vehicle:hover {
+    background-color: rgba(221,226,232,.5);
+ }
+ .share-business i, .list-vehicle i {
+    margin-top: 18px;
+    margin-right: 25px;
+    padding-left: 15px;
+ }
+ .closeEarnPop {
+    margin-left: 359px;
+    cursor: pointer;
+ }
+
+ /* careers pop */ 
+ .careers-pop {
+    width: 148px;
+    height: 155px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: absolute;
+    margin-left: 1050px;
+    margin-top: -10px;
+    display: none;
+    padding-bottom: 25px;
+    background-color: white;
+ }
+ .jobs, .people, .culture {
+    display: flex;
+    cursor: pointer;
+ }
+ .jobs:hover, .people:hover, .culture:hover {
+    background-color: rgba(221,226,232,.5);
+ }
+ .jobs i, .people i, .culture i {
+    margin-top: 20px;
+    margin-right: 25px;
+    padding-left: 15px;
+ }
+ .closeCareerPop {
+    margin-left: 120px;
+    cursor: pointer;
+ }
+/* footer */
+.footer {
+    background-color: #dde2e8;
+    padding: 80px;
+    padding-top: 60px;
+}
+ul {
+    list-style: none;
+    margin-left: -50px;
+}
+.headline > h2 {
+    margin-bottom: 40px;
+}
+.footer p {
+    color: #77899b;
+}
+ul > li {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #77899b;
+}
+.riding > li:hover {
+    color: black;
+}
+
+/* support-section */
+.support-section {
+    background-color: #1C2736;
+    padding: 80px;
+    color: #77899b;
+}
+.support-section-top {
+    display: flex;
+    justify-content: space-between;
+}
+.mail, .phone {
+    display: flex;
+    margin-bottom: 20px;
+}
+.mail img, .phone img {
+    margin-right: 7px;
+   
+}
+#support-section-logo {
+    margin-left: -15px;
+    margin-bottom: 20px;
+}
+.social-media img:first-child {
+    margin-right: 15px;
+}
+.rightpart {
+    display: flex;
+}
+
+.company, .policies, .quick-links {
+    display: flex;
+    flex-direction: column;
+}
+.company-dropdown, .policy-dropdown, .quick-links-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.company > h5, .policies > h5, .quick-links > h5 {
+    font-size: 16px;
+    color: white;
+    margin-left: 20px;
+}
+.company-dropdown > li, .policy-dropdown> li, .quick-links-dropdown > li{
+    margin: 8px 30px;
+}
+.company-dropdown > li:hover, .policy-dropdown> li:hover, .quick-links-dropdown:hover > li {
+    color: white;
+}
+.support-section-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    cursor: pointer;
+}
+.twitter img:nth-child(2) {
+    margin: 0 20px;
+}
+.twitter img:nth-child(3) {
+    margin-right: 50px;
+}
+/* why choose drivezy section */
+.choose-drivezy {
+    padding: 80px;
+}
+.choose-options img {
+    width: 80px;
+}
+.choose-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    padding-left: 100px;
+}
+/* just-connect section */
+.just-connect {
+    display: flex;
+    margin-left: 40px;
+}
+
+.rightside {
+    padding: 30px;
+    margin-top: 100px;
+}
+.rightside h4 {
+    color:#77899b;
+}
+.knowmoreBtn {
+    background-color: #41b6ac;
+    padding: 10px 20px;
+    color: #fff;
+    border: 1px solid #009688;
+    height: 49px;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: .04em;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.knowmoreBtn:hover {
+    box-shadow: 0 2px 8px -2px rgb(31 45 61 / 60%);
+}
+
+/* airport ride section */
+.airport-rides {
+    display: flex;
+    margin-top: 200px;
+    justify-content: space-between;
+    padding-left: 80px;
+    margin-bottom: 100px;
+    background-image: url("https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565174705_plane.png");
+    background-repeat: no-repeat;
+    background-size: 400px 150px;
+    background-position: center;
+    background-position-x: 400px;
+}
+
+#phone {
+    width: 220px;
+    margin-right: 200px;
+    margin-top: 200px;
+}
+.left-side {
+   margin-top: 300px;
+}
+
+/* slider-section */ 
+.slider-section {
+    position: relative;
+    width: 1200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 100px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    background-color: rgba(221,226,232,.33);
+}
+
+.slider-section > h4 {
+    text-align: center;
+    padding-top: 40px;
+}
+.slider-section1 {
+    display: flex;
+    justify-content: space-around;
+}
+.slider-section img {
+ margin-left: 50px;
+ margin-top: 30px; 
+ cursor: pointer;
+ width: 100px;  
+}
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    color: #009688;
+    background-color: white;
+    padding: 3px 10px;
+    border: 1px solid #009688;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.next {
+    right: -18px;
+}
+.prev {
+    left: -18px;
+}
+.arrow:hover {
+    background-color: #009688;
+    color: white;
+}
+
+/* main-searching-section */
+.main-section {
+    display: flex;
+    margin-left: 90px;
+    margin-top: 80px;
+    flex-direction: column;
+}
+.heading {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -60px;
+}
+.heading h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #1f2d3d;
+    font-weight: 500;
+}
+.heading .leftside-main {
+    margin-top: 60px;
+}
+.heading img {
+    width: 800px;
+    height: 1000px;
+    margin-bottom: 300px;
+    border-top-left-radius: 100px;
+    margin-right: 20px;;
+}
+.rent-vehicle {
+    width: 172px;
+    height: 69px;
+    display: flex;
+    border: 1px solid #f15d61;
+    background-color:#f15d61;
+    color: white;
+    font-size: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: -1000px;
+}
+.rent-vehicle img {
+    width: 20px;
+    height: 20px;
+    padding-left: 30px;
+    padding-top: 15px;
+    margin-right: 10px;
+}
+.main-search-bar {
+    width: 1000px;
+    height: 123px;
+    border-radius: 20px;
+    margin-top: -15px;
+    background-color: #fff;
+    box-shadow: 0 2px 16px -6px rgb(31 45 61 / 48%);
+}
+.choose-vehicle {
+    display: flex;
+    padding-left: 30px;
+}
+#car {
+    width: 75px;
+    height: 39px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+#bike {
+    width: 55px;
+    height: 37px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    border-left: 1px solid #77899b;
+    cursor: pointer;
+}
+.vehicle-type {
+    width: 211px;
+    height: 54px;
+    border: 1px solid #77899b;
+    margin-top: -20px;
+    border-radius: 10px;
+}
+.vehicle-type:hover {
+    box-shadow: 0 2px 8px -2px rgb(31 45 61 / 40%);
+} 
+.search-location {
+    padding-left: 20px;
+}
+.search-location > input {
+    padding: 20px;
+    margin-top: -5px;
+    width: 500px;
+    border: 1px solid #77899b;
+    border-radius: 10px;
+}
+.searchBtn {
+    margin-left: 20px;
+    width: 173px;
+    height:54px;
+    margin-top: 46px;
+    border: none;
+    background-color:#41b6ac;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+/* my offers section */ 
+.offers {
+    margin-left: 100px;
+    margin-top: 120px;
+}
+
+/* city modal section */
+.city-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.city-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 20px;
+}
+.closeBtn {
+    color:#1f2d3d;
+    float: right;
+    font-size: 30px;
+    margin-top: -70px;
+}
+.closeBtn:hover, .closeBtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-left: 20px;
+}
+.city-grid img {
+    width: 97px;
+    height: 97px;
+}
+.city-grid p {
+    margin-left: 20px;
+}
+
+#bengaluruBtn {
+    color: #fff;
+    display: block;
+    background-color: #41b6ac;
+    border: 1px solid #41b6ac;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-left: -5px;
+}
+.city-item button {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* #text-shadow {
+    position: relative;
+    top: 34px;
+    right: 22px;
+    opacity: .24;
+    color: #dde2e8;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 40px;
+} */
