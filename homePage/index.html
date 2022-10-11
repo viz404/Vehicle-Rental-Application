@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/2d42f35cf8.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Drivezy</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+<!-- navbar -->
+    <div class="common header">
+        <div class="container">
+            <div class="leftbar">
+                <img id = "drivezy-logo"src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"  alt="drivezy-logo" />
+                <div class="country">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566564152_indiaflag.svg" alt="country-india"/>
+                    <p>India</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+                </div>
+                <div class="city">
+                    <p id="cityBtn" class="btn">Bengaluru</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+                </div>
+            </div>
+            <div class="rightbar">
+                <div class="earnwithus">
+                    <p>Earn with Us</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+                </div>
+                <p>My Offers</p>
+                <div class="careers">
+                    <p>Careers</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+                </div>
+                <div class="myplans">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
+                    <p>My Plan</p>
+                </div>
+                <img id="myprofile" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg" alt="profile" />
+            </div>
+        </div>
+    </div>
+
+    <!-- earn with us popover --> 
+    <div class="earn-pop">
+        <button class="closeEarnPop"><i class="fa-solid fa-xmark"></i></button>
+        <div class="share-business">
+            <i class="fa-solid fa-handshake"></i>
+            <p>Share-A-Business become a franchise partner</p>
+        </div>
+        <div class="list-vehicle">
+            <i class="fa-solid fa-cable-car"></i>
+            <p>List your Vehicle</p>
+        </div>
+    </div>
+
+    <!-- careers popover --> 
+    <div class="careers-pop">
+        <button class="closeCareerPop"><i class="fa-solid fa-xmark"></i></button>
+        <div class="jobs">
+            <i class="fa-solid fa-user-doctor"></i>
+            <p>Jobs</p>
+        </div>
+        <div class="people">
+            <i class="fa-solid fa-people-line"></i>
+            <p>People</p>
+        </div>
+        <div class="culture">
+            <i class="fa-solid fa-kaaba"></i>
+            <p>Culture</p>
+        </div>
+    </div>
+
+    <!-- city modal section -->
+    <div id="citymodal" class="city-modal">
+        <div class="city-content">
+            <div class="preferred-city">
+                <h2>Choose your preferred city</h2>
+                <span class="closeBtn">&times;</span>
+            </div>
+            <div class="city-grid">
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046172_Mumbai.png" />
+                    <button>Mumbai</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559045955_Bengaluru.png" />
+                    <button id="bengaluruBtn">Bengaluru</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046253_Pune.png" />
+                    <button>Pune</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046199_Mysuru.png" />
+                    <button>Mysuru</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1573798997_Goa-08%282%29.png" />
+                    <button>Goa</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046065_Hyderabad.png" />
+                    <button>Hyderabad</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046143_Manipal.png" />
+                    <button>Manipal</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046230_Nagpur.png" />
+                    <button>Nagpur</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046035_Hubli.png" />
+                    <button>Hubli</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559045988_Delhi.png" />
+                    <button>Delhi</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1591282133_amritsar-icon.png" />
+                    <button>Amritsar</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1591282188_chandigarh-icon.png" />
+                    <button>Chandigarh</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1593417424_bhubaneshwar.png" />
+                    <button>Bhubaneshwar</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1596116007_jaipur.png" />
+                    <button>Jaipur</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1592656739_coimbatore-icon.png" />
+                    <button>Tirupur</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046253_Pune.png" />
+                    <button>Amravati</button>
+                </div>
+                <div class="city-item">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1593417447_vizag.png" />
+                    <button>Guntur</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fixed bar section -->
+    <div class="fixed">
+        <h4>Heading out of town? Now nook a Drivezy in brand new cities ! 
+        <span id="cityBtn" style="text-decoration: underline; cursor:pointer" >
+        Click</span> to explore more
+        <i class="fa-solid fa-xmark cancelBtn"></i>
+        </h4>
+    
+    </div>
+
+    <!-- main searching section -->
+    <div class="main-section">
+        <div class="heading">
+            <div class="leftside-main">
+                <h1>Own the <span style="color:#f15d61">experience</span>,<br>
+                    not the ride
+                </h1>
+                <p style="color:#77899b; margin-bottom: 40px">Rent vehicles from people around you</p>
+            </div>
+            <div class="rightside-main">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575901_bangalore1.jpg" />
+            </div>
+        </div>
+        <div class="rent-vehicle">
+                <img id="location-img" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565939671_1enabled.png" />
+                <p>Rent Vehicle</p>
+        </div>
+        <div class="main-search-bar">
+            <div class="choose-vehicle">
+                <div class="rent-options">
+                    <p style="color:#77899b">I want to rent a</p><br>
+                    <div class="vehicle-type" id="vehicle-type">
+                        <img id="car" value="car" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509635_group-3%403x.png" />
+                        <img id="bike" value="bike" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565933919_bike.svg" />
+                    </div>
+                </div>
+                <div class="search-location">
+                    <p style="color:#77899b">I need my vehicle near</p>
+                    <input id="input-bar" type="text" placeholder="Type or select your location here">
+                </div>
+                <button class="searchBtn" id="searchBtn">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- my offers section -->
+    <div class="offers">
+        <h3>MY OFFERS</h3>
+        <p style="color:#41b6ac">VIEW ALL</p>
+    </div>
+
+    <!-- airport rides section -->
+    <div class="airport-rides">
+        <div class="left-side">
+            <h2>BENGALURU AIRPORT RIDES</h2>
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566567805_Ridesat449.svg" alt="rieds-starting" />
+            <h4>
+                Bengaluru airport rides made easy with Drivezy. No need to book an<br>
+                expensive cab to or from Bengaluru airport. Hire a one-way car to or<br>
+                from Bengaluru airport and drive yourself at half the price
+            </h4>
+            <h4 class="feature">This feature is only available on app.<span class="download">DOWNLOAD NOW</span></h4>
+            <a href="#"><button class="knowmoreBtn">KNOW MORE</button></a>
+        </div>
+        <div>
+            <img id="phone" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565086561_iPhoneXTemplate%402x.png" alt="phone displaying map" />
+        </div>
+    </div>
+
+    <!-- why choose drivezy section -->
+    <div class="choose-drivezy">
+        <h2 id="text-shadow">WHY CHOOSE DRIVEZY</h2>
+        <div class="choose-options">
+            <div>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566558445_choose-drivezy-5.png" alt="no-security" />
+                <h5>No security deposit</h5>
+            </div>
+            <div>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566558287_choose-drivezy-1.png" alt="doorstep" />
+                <h5>Doorstep delivery</h5>
+            </div>
+            <div>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566558469_choose-drivezy-4.png" alt="check-in" />
+                <h5>Smart check-in</h5>
+            </div>
+            <div>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566558637_choose-drivezy-3.png" alt="pay-later"/>
+                <h5>Pay later</h5>
+            </div>
+            <div>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566558344_choose-drivezy-2.png" alt="instant-refund" />
+                <h5>Instant refund</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Just connect section -->
+    <div class="just-connect">
+        <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565095521_IB175426_175426123816157_SM757030.png" alt="just-connect" />
+        <div class="rightside">
+            <h2><span id="text-shadow">JUST CONNECT</span>- BE A PART OF DRIVEZY</h2>
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566567323_Listyourvehicle.svg" alt="image" />
+            <h4>List your vehicle on Drivezy and turn it into an earning member of the family.</h4>
+            <a href="#"><button class="knowmoreBtn">KNOW MORE</button></a> 
+        </div>
+    </div>
+
+    <!-- slider section --> 
+    <div class="slider-section">
+        <h4>FEATURED IN</h4>
+        <div class="slider-section1">
+            <div class="slide">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1501909422_google-launchpad.png" alt="slider 1" />
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/drivezy.com-assets/drivezy-inc42.png" alt="slider 2" />
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/drivezy.com-assets/drivezy-economic-times.png" alt="slider 3" />
+            </div>
+            
+            <span class="arrow prev">&#10094;</span>
+            <span class="arrow next">&#10095;</span>
+
+        </div>
+</div>
+
+    <!-- support section -->
+<div class="support-section">
+    <div class="support-section-top">
+        <div class="leftpart">
+            <img id="support-section-logo" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566637510_logowhite.svg" alt="logo" />
+            <div class="mail">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566638651_mail.svg" alt="email-logo" />
+                <p>support@drivezy.com</p>
+            </div>
+            <div class="phone">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566638970_phone.svg" alt="phone-logo" />
+                <p>08061933715</p>
+            </div>
+            <div class="social-media">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566636252_appstore.svg" alt="app-store" />
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566636434_playstore.svg" alt="play-store" />
+            </div>
+        </div>
+        <div class="rightpart">
+            <div class="company">
+                <h5>Company</h5>
+                <ul class="company-dropdown">
+                    <li>Careers</li>
+                    <li>Blog</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Be a part of Justconnect</li>
+                    <li>Become a Franchise Partner</li>
+                </ul>
+            </div>
+            <div class="policies">
+                <h5>Policies</h5>
+                <ul class="policy-dropdown">
+                    <li>Privacy policy</li>
+                    <li>Rental agreement</li>
+                    <li>Refund and cancellation</li>
+                    <li>Going outside?</li>
+                    <li>Terms and conditions</li>
+                    <li>Damage charges</li>
+                </ul>
+            </div>
+            <div class="quick-links">
+                <h5>Quick links</h5>
+                <ul class="quick-links-dropdown">
+                    <li>Help centre</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="support-section-bottom">
+        <p>2020 Drivezy, Inc. All rights reserved.</p>
+        <div class="twitter">
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639433_twitter.svg" alt="twitter-logo" />
+        
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639406_fb.svg" alt="facebook-logo" />
+        
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639211_insta.svg" alt="instagram-logo" />
+        </div>
+    </div>
+</div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="headline">
+            <h2>Self Drive <span class="vehicle">Car</span> Rentals in <span class="place">Bengaluru</span>, India</h2>
+        </div>
+        <div class="headline sub1">
+            <h4>Rent a <span class="vehicle">Bike</span> in <span class="place">Bengaluru</span></h4>
+            <p>Rent <span>bike</span> for self drive in <span class="place">Bengaluru</span>. Drivezy is the most preffered brand for self drive car rentals in <span class="place">Bengaluru</span>. 
+                Self drive car rentals are getting extremely popular in <span class="place">Bengaluru</span>.
+                Rent a Swift and enjoy the freedom to drive on your own with Drivezy.</p>
+        </div>
+        <div class="headline sub2">
+            <h4>Car Rental Locations in <span class="place">Bengaluru</span></h4>
+            <p>Hire a <span class="vehicle">Car</span> for self drive from different locations. You can rent a self drive Car from these locations in <span class="place">Bengaluru</span></p>
+        </div>
+        <div class="headline sub3">
+            <h4>Self Drive Rentals in India</h4>
+            <p>Drivezy is present in various locations in India:</p>
+            <ul class="riding">
+                <li>Rent a car in Mumbai</li>
+                <li>Rent a car in Bengaluru</li>
+                <li>Rent a car in Pune</li>
+                <li>Rent a car in Mysuru</li>
+                <li>Rent a car in Goa</li>
+                <li>Rent a car in Hydreabad</li>
+                <li>Rent a car in Manipal</li>
+                <li>Rent a car in Nagpur</li>
+                <li>Rent a car in Hubli</li>
+                <li>Rent a car in Delhi</li>
+                <li>Rent a car in Amritsar</li>
+                <li>Rent a car in Chandigarh</li>
+                <li>Rent a car in Bhubaneshwar</li>
+                <li>Rent a car in Jaipur</li>
+                <li>Rent a car in Tripur</li>
+                <li>Rent a car in Amravati</li>
+                <li>Rent a car in Guntur</li>
+            </ul>
+            <p>Drivezy is the most affordable brand that provides self drive cars and self drive bikes for rent across India. Rent a car for self drive, Rent a scooter, hire cars of your choice.</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // fixed section 
+    var cancelBtn = document.getElementsByClassName("cancelBtn")[0];
+    var fixed = document.getElementsByClassName("fixed")[0];
+    cancelBtn.addEventListener("click", fixedVan);
+    function fixedVan() {
+        fixed.style.display = "none";
+    }
+
+    var cityModal = document.getElementById("citymodal");
+
+    var modalBtn = document.getElementById("cityBtn");
+
+    var closeBtn = document.getElementsByClassName("closeBtn")[0];
+
+    modalBtn.addEventListener("click", openmodal);
+    closeBtn.addEventListener("click", closemodal);
+
+    function openmodal() {
+        cityModal.style.display = "block";
+    }
+
+    function closemodal() {
+        cityModal.style.display = "none";
+    }
+    var opendialog1 = document.getElementsByClassName("earnwithus")[0];
+    var earndialog = document.getElementsByClassName("earn-pop")[0];
+    var closeEarnPop = document.getElementsByClassName("closeEarnPop")[0];
+    
+    opendialog1.addEventListener("click", open);
+    closeEarnPop.addEventListener("click", closeEarn);
+    function open() {
+        earndialog.style.display = "block";
+    }
+
+    function closeEarn() {
+        earndialog.style.display = "none";
+    }
+
+    var careerdialog = document.getElementsByClassName("careers")[0];
+    var careerpop = document.getElementsByClassName("careers-pop")[0];
+    var closeCareerPop = document.getElementsByClassName("closeCareerPop")[0];
+
+    careerdialog.addEventListener("click", openDialog);
+    closeCareerPop.addEventListener("click", closeCareer);
+
+    function openDialog() {
+        careerpop.style.display = "block";
+    }
+    
+    function closeCareer() {
+        careerpop.style.display = "none";
+    }
+
+    var car = document.getElementById("car");
+    car.addEventListener("click", changeToCar);
+
+    function changeToCar() {
+        car.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509635_group-3%403x.png";
+        bike.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565933919_bike.svg";
+    }
+
+    var bike = document.getElementById("bike");
+    bike.addEventListener("click", changeToBike);
+
+    function changeToBike() {
+        bike.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509998_group-2%403x.png";
+        car.src = "https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565935736_car2.svg";
+    }
+
+    var searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", setData);
+
+    function setData() {
+        var location = document.getElementById("input-bar").value;
+        var car = document.getElementById("car");
+        var bike = document.getElementById("bike");
+        car.addEventListener("click", selectCar);
+        var vehicle = "";
+        function selectCar() {
+            vehicle = car.id;
+            return vehicle;
+        }
+        bike.addEventListener("click", selectBike);
+        function selectBike() {
+            vehicle = bike.id;
+            return vehicle;
+        }
+        console.log(vehicle);
+        console.log(location);
+        let d = new Date();
+        let pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+        let drop = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+(d.getDate()+1);
+
+        let obj = {
+            vehicle: vehicle,
+            location: location,
+            pickup: pickup,
+            drop: drop
+        }
+        localStorage.setItem("search_query", JSON.stringify(obj));
+    }
+
+</script>
