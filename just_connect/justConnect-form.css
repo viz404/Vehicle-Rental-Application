@@ -1,0 +1,269 @@
+@font-face {
+    font-family: "proxima_nova_rgregular";
+    src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot");
+    src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff")
+        format("woff"),
+      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf")
+        format("truetype"),
+      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "proxima_nova_rgbold";
+    src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot");
+    src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff")
+        format("woff"),
+      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf")
+        format("truetype"),
+      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "adelle_rgregular";
+    src: url("https://litmus.com/fonts/Emails/adelle_reg-webfont.eot");
+    src: url("https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://litmus.com/fonts/Emails/adelle_reg-webfont.woff")
+        format("woff"),
+      url("https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf")
+        format("truetype"),
+      url("https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  * {
+    font-family: "proxima_nova_rgregular", Helvetica, Arial, sans-serif;
+  }
+  div{
+    display: block;
+  }
+  .main_container{
+    margin: auto;
+    padding-bottom: 80px;
+  }
+  .main_container>.container{
+    padding: 0 12%;
+  }
+  .container>.con_header{
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    height: 30px;
+    padding-bottom: 14px;
+    margin-top: 40px;
+
+  }
+  .tab_con{
+    display: flex;
+    flex-direction: row;
+  }
+  .tab_con>.tab_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tab_header>.selected_tab{
+    color: #1f2d3d;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    align-items: center;
+    display: flex;
+    padding: 0 0 8px 19px;
+  }
+  .selected_tab>.right_arrow{
+    padding-left: 14px;
+    margin-top: 5px;
+  }
+  .selected_tab>.right_arrow img{
+    height: 24px;
+    width: 24px;
+  }
+  .tab_header>.span_tab{
+    border: 2px solid #f15d61;
+    background-color: #f15d61;
+    border-radius: 4px;
+    color: #1f2d3d;
+    font-size: 16px;
+  }
+  .tab_header>.span_hidden{
+    border: 2px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+    
+  }
+  .tab_header>.hidden_tab{
+    align-items: center;
+    display: flex;
+    color: #b8c1cb;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 0 8px 19px;
+  }
+  .hidden_tab>.right_arrow{
+    padding-left: 14px;
+    margin-top: 5px;
+  }
+  .hidden_tab>.right_arrow img{
+    height: 24px;
+    width: 24px;
+  }
+  .form_con{
+    border-radius: 6px;
+   
+    box-shadow: 0 2px 8px -2px rgb(31 45 61 / 40%);
+
+  }
+  .form_con>.form_box{
+    
+    padding-bottom: 13px;
+    margin-top: 33px;
+    padding: 3px;
+
+  }
+  .form_box>.form_head{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(221,226,232,.5);
+    border-radius: 6px 6px 0 0;
+
+  }
+  .form_head>.vehicle_type{
+    margin: 4% 3%;
+  }
+  .vehicle_type>.image{
+    align-self: center;
+  }
+  .vehicle_type>.image>img{
+    width: 156px;
+    height: 100px;
+  }
+  .vehicle_type>.con_checkbox{
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    margin-top: 36px;
+    letter-spacing: .04em;
+    font-size: 12px;
+  }
+  .checkbox_veh{
+    position: relative;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    flex: 1 1;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .con_checkbox> input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+  }
+  .text_label{
+    position: absolute;
+    padding-left: 28px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1f2d3d!important;
+    width: 90%;
+  }
+  .form_details{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .div_details{
+    display: flex;
+    margin: 1.5% 2% 0 0;
+  }
+  .div_details>div{
+    display: block;
+    background-color: #da898c;
+    margin: 1.5% 2% 0 0;
+    min-width: 32%;
+  }
+  .div_details input{
+    width: 30%;
+    height: 48px;
+    border: 1px solid #b8c1cb;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0 8px;
+    font-size: 16px;
+    color: #2b3a51;
+    margin-right: 20px;
+  }
+  .div_labels{
+    width: 30%;
+    margin-right: 40px;
+    
+  }
+  .div_container{
+    margin-top: 40px;
+  }
+  .div_details select{
+    width: 30%;
+    height: 48px;
+    border: 1px solid #b8c1cb;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0 8px;
+    font-size: 16px;
+    color: #2b3a51;
+    margin-right: 20px;
+  }
+  .textarea{
+   width: 100%; 
+   padding: 15px;
+   border-radius: 5px;
+  }
+  .div_container>.div_btn{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .div_btn button{
+    width: 25%;
+    padding: 20px 20px; 
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: #8b97a3;
+    background-color: #dde2e8;
+  }
+  @media screen and (min-width: 640px) and (max-width: 980px){
+    .div_details input{
+      width: 100%;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    label{
+      font-size: 14px;
+    }
+    .div_details,.div_labels{
+      display: block;
+    }
+    .div_details select{
+      width: 100%;
+    }
+    .div_details .textarea{
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
