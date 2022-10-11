@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        select,
+        button {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <select name="vehicle" id="vehicle">
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+        </select>
+        <select name="location" id="location">
+            <option value="Bellandur (New)">Bellandur (New)</option>
+            <option value="Bommanahalli">Bommanahalli</option>
+            <option value="Mathikere">Mathikere</option>
+            <option value="Manpho Convention Center (New)">Manpho Convention Center (New)</option>
+            <option value="Ashwath Nagar (HBR Layout)">Ashwath Nagar (HBR Layout)</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
+<script>
+    document.querySelector("form").onsubmit = () => {
+        event.preventDefault();
+
+        let vehicle = document.querySelector("#vehicle").value;
+        let location = document.querySelector("#location").value;
+        
+        let d = new Date();
+        let pickup = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+        let md = addDays(new Date(), 1);
+        let drop = md.getFullYear() + "-" + (md.getMonth() + 1) + "-" + (md.getDate());
+
+        let obj = {
+            vehicle: vehicle,
+            location: location,
+            pickup: pickup,
+            drop: drop
+        }
+        localStorage.setItem("search_query", JSON.stringify(obj));
+    }
+
+    function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
+    }
+</script>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivezy</title>
+    <link rel="stylesheet" href="products-style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="common header">
+        <div class="container">
+            <div class="leftbar">
+                <img id="drivezy-logo"
+                    src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566208475_drivezyheaderlogo.svg"
+                    alt="drivezy-logo" />
+                <div class="country">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566564152_indiaflag.svg"
+                        alt="country-india" />
+                    <p>India</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+                        alt="drop-down-arrow" />
+                </div>
+                <div class="city">
+                    <p>Bengaluru</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+                        alt="drop-down-arrow" />
+                </div>
+            </div>
+            <div class="rightbar">
+                <div class="earnwithus">
+                    <p>Earn with Us</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+                        alt="drop-down-arrow" />
+                </div>
+                <p>My Offers</p>
+                <div class="careers">
+                    <p>Careers</p>
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+                        alt="drop-down-arrow" />
+                </div>
+                <div class="myplans">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
+                    <p>My Plan</p>
+                </div>
+                <img id="myprofile" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
+                    alt="profile" />
+            </div>
+        </div>
+    </div>
+    <!-- search bar -->
+    <section id="search-bar">
+        <form method="post" class="search-bar">
+            <div>
+                <p>I want to rent a</p>
+                <div>
+                    <div>
+                        <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509635_group-3%403x.png"
+                            alt="car icon" id="car-icon">
+                    </div>
+                    <div>
+                        <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1555509998_group-2%403x.png"
+                            alt="bike logo" id="bike-icon">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>I need my vehicle near</p>
+                <select name="location" id="location">
+                    <option value="Bellandur (New)">Bellandur (New)</option>
+                    <option value="Bommanahalli">Bommanahalli</option>
+                    <option value="Mathikere">Mathikere</option>
+                    <option value="Manpho Convention Center (New)">Manpho Convention Center (New)</option>
+                    <option value="Ashwath Nagar (HBR Layout)">Ashwath Nagar (HBR Layout)</option>
+                </select>
+            </div>
+            <div>
+                <p>Select your pickup date & time</p>
+                <input type="date" name="pickup-time" id="pickup-time">
+            </div>
+            <div>
+                <p>Select your drop date & time</p>
+                <input type="date" name="drop-time" id="drop-time">
+            </div>
+            <div>
+                <p>&nbsp;</p>
+                <button type="submit">SEARCH</button>
+            </div>
+        </form>
+    </section>
+    <!-- products -->
+    <main>
+        <div class="product-container">
+            <div id="filter-container">
+                <section id="fuel-package">
+                    <div>
+                        <p>Select your fuel package</p>
+                    </div>
+                    <div>
+                        <div id="without-f">
+                            <p>Without Fuel</p>
+                        </div>
+                        <div id="with-f">
+                            <p>With Fuel</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Booking Duration</h3>
+                        <div>
+                            <p>Current Booking Duration</p>
+                            <div id="booking-duration">
+                                <button id="btn-duration-custom">Custom</button>
+                                <button id="btn-duration-7">7 Days</button>
+                                <button id="btn-duration-15">15 Days</button>
+                                <button id="btn-duration-30">30 Days</button>
+                            </div>
+                            <ul>
+                                <li>You will be charged per km driven at the end of the trip.</li>
+                                <li>You will not be reimbursed for fuel expenses.</li>
+                                <li>You must return the vehicle with the same amount of fuel as when picked up.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="filter" id="car-filter">
+                    <div>
+                        <h3>Filter</h3>
+                    </div>
+                    <div class="inside-filter">
+                        <span>Car type</span>
+                        <div class="car-type-filter">
+                            <button id="btn-hatchback">Hatchback</button>
+                            <button id="btn-sedan">Sedan</button>
+                            <button id="btn-suv">SUV</button>
+                            <button id="btn-mini-suv">Mini SUV</button>
+                        </div>
+                        <span>Transmission type</span>
+                        <div class="transmission-type-filter">
+                            <button id="btn-manual">Manual</button>
+                            <button id="btn-automatic">Automatic</button>
+                        </div>
+                        <span>Fuel type</span>
+                        <div class="fuel-type-filter">
+                            <button id="btn-diesel">Diesel</button>
+                            <button id="btn-petrol">Petrol</button>
+                        </div>
+                        <span>Age limit</span><br>
+                        <div><button id="age_btn">18-21 years</button></div>
+                    </div>
+                </section>
+                <section class="filter" id="bike-filter">
+                    <div>
+                        <h3>Filter</h3>
+                    </div>
+                    <div class="inside-filter">
+                        <span>Transmission type</span>
+                        <div class="transmission-type-filter">
+                            <button id="btn-geared">Geared</button>
+                            <button id="btn-gearless">Gearless</button>
+                        </div>
+                        <span>Engine capacity</span>
+                        <div class="car-type-filter engine-capacity-filter">
+                            <button id="btn-110"><=110cc</button>
+                            <button id="btn-111">111-150cc</button>
+                            <button id="btn-150">>150cc</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="results-container">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1589900796_long-booking-banner-3.png"
+                    alt="image">
+                <div class="banner">
+                    <p>Vehicles are available at the following Locations <b>Bommanahalli</b></p>
+                </div>
+                <div class="sorting-section">
+                    <div class="left-box">
+                        <div class="selected-filters">No-fuel</div>
+                    </div>
+                    <div class="right-box">
+                        <div class="sort-by">
+                            <div><span>Sort By</span></div>
+                            <div><select name="sort-select" id="sort-select">
+                                    <option value="Distance">Distance</option>
+                                    <option value="lth">Price - Low to High</option>
+                                    <option value="htl">Price - High to Low</option>
+                                </select></div>
+                        </div>
+                        <div class="map-view">
+                            <div><span>Map View</span></div>
+                            <div><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-display">
+                    <!-- <div>
+                        <div class="img-container">
+                            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1558698293_eon.png" alt="Hyundai Eon">
+                            <span>₹1521</span>
+                        </div>
+                        <hr>
+                        <div class="img-desc">
+                            <div>
+                                <h3>Hyundai Eon (petrol)</h3>
+                                <p>Manual, 5 Seats, Petrol</p>
+                                <p>Bellanduru (New)</p>
+                                <p>0.0 km away</p>
+                            </div>
+                            <hr>
+                            <div>QUICK VIEW</div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- support section -->
+    <div class="support-section">
+        <div class="support-section-top">
+            <div class="leftpart">
+                <img id="support-section-logo"
+                    src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566637510_logowhite.svg" alt="logo" />
+                <div class="mail">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566638651_mail.svg"
+                        alt="email-logo" />
+                    <p>support@drivezy.com</p>
+                </div>
+                <div class="phone">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566638970_phone.svg"
+                        alt="phone-logo" />
+                    <p>08061933715</p>
+                </div>
+                <div class="social-media">
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566636252_appstore.svg"
+                        alt="app-store" />
+                    <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566636434_playstore.svg"
+                        alt="play-store" />
+                </div>
+            </div>
+            <div class="rightpart">
+                <div class="company">
+                    <h5>Company</h5>
+                    <ul class="company-dropdown">
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                        <li>Be a part of Justconnect</li>
+                        <li>Become a Franchise Partner</li>
+                    </ul>
+                </div>
+                <div class="policies">
+                    <h5>Policies</h5>
+                    <ul class="policy-dropdown">
+                        <li>Privacy policy</li>
+                        <li>Rental agreement</li>
+                        <li>Refund and cancellation</li>
+                        <li>Going outside?</li>
+                        <li>Terms and conditions</li>
+                        <li>Damage charges</li>
+                    </ul>
+                </div>
+                <div class="quick-links">
+                    <h5>Quick links</h5>
+                    <ul class="quick-links-dropdown">
+                        <li>Help centre</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="support-section-bottom">
+            <p>2020 Drivezy, Inc. All rights reserved.</p>
+            <div class="twitter">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639433_twitter.svg"
+                    alt="twitter-logo" />
+
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639406_fb.svg"
+                    alt="facebook-logo" />
+
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566639211_insta.svg"
+                    alt="instagram-logo" />
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="headline">
+            <h2>Self Drive <span class="vehicle">Bike</span> Rentals in <span class="place">Goa</span>, India</h2>
+        </div>
+        <div class="headline sub1">
+            <h4>Rent a <span class="vehicle">Bike</span> in <span class="place">Goa</span></h4>
+            <p>Rent <span>bike</span> for self drive in <span class="place">Goa</span>. Drivezy is the most
+                preffered brand for self drive car rentals in <span class="place">Goa</span>.
+                Self drive car rentals are getting extremely popular in <span class="place">Goa</span>.
+                Rent a Swift and enjoy the freedom to drive on your own with Drivezy.</p>
+        </div>
+        <div class="headline sub2">
+            <h4>Car Rental Locations in <span class="place">Goa</span></h4>
+            <p>Hire a <span class="vehicle">Bike</span> for self drive from different locations. You can rent a self
+                drive Car from these locations in <span class="place">Goa</span></p>
+        </div>
+        <div class="headline sub3">
+            <h4>Self Drive Rentals in India</h4>
+            <p>Drivezy is present in various locations in India:</p>
+            <ul class="riding">
+                <li>Rent a car in Mumbai</li>
+                <li>Rent a car in Bengaluru</li>
+                <li>Rent a car in Pune</li>
+                <li>Rent a car in Mysuru</li>
+                <li>Rent a car in Goa</li>
+                <li>Rent a car in Hydreabad</li>
+                <li>Rent a car in Manipal</li>
+                <li>Rent a car in Nagpur</li>
+                <li>Rent a car in Hubli</li>
+                <li>Rent a car in Delhi</li>
+                <li>Rent a car in Amritsar</li>
+                <li>Rent a car in Chandigarh</li>
+                <li>Rent a car in Bhubaneshwar</li>
+                <li>Rent a car in Jaipur</li>
+                <li>Rent a car in Tripur</li>
+                <li>Rent a car in Amravati</li>
+                <li>Rent a car in Guntur</li>
+            </ul>
+            <p>Drivezy is the most affordable brand that provides self drive cars and self drive bikes for rent
+                across India. Rent a car for self drive, Rent a scooter, hire cars of your choice.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="products-script.js"></script>
