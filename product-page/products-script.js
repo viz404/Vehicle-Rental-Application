@@ -234,8 +234,13 @@ let d = new Date();
 let hr = ("0" + d.getHours()).slice(-2);
 let min = ("0" + d.getMinutes()).slice(-2);
 
-pickup.setAttribute("min", search_query.pickup);
-drop.setAttribute("min", search_query.drop);
+let md = addDays(new Date(), 1);
+
+let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2) +"T"+hr+":"+min;
+let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2) +"T"+hr+":"+min;
+
+pickup.setAttribute("min", changed_pickup);
+drop.setAttribute("min", changed_drop);
 
 document.querySelector(".search-bar").onsubmit = () => {
     event.preventDefault();
@@ -459,20 +464,11 @@ btn_duration_custom.onclick = () => {
 
     displayData(data);
 
-    let d = new Date();
-    let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+    pickup.value = changed_pickup;
+    drop.value = changed_drop;
 
-    let hr = ("0" + d.getHours()).slice(-2);
-    let min = ("0" + d.getMinutes()).slice(-2);
-
-    let md = addDays(new Date(), 1);
-    let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
-
-    search_query.pickup = changed_pickup +"T"+hr+":"+min;
-    search_query.drop = changed_drop +"T"+hr+":"+min;
-
-    pickup.value = search_query.pickup;
-    drop.value = search_query.drop;
+    search_query.pickup = pickup.value;
+    search_query.drop = drop.value;
 
     localStorage.setItem("search_query", JSON.stringify(search_query));
 }
