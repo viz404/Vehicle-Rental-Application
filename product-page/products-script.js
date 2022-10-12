@@ -231,13 +231,11 @@ pickup.value = search_query.pickup;
 drop.value = search_query.drop;
 
 let d = new Date();
-let min_pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+let hr = ("0" + d.getHours()).slice(-2);
+let min = ("0" + d.getMinutes()).slice(-2);
 
-let md = addDays(new Date(), 1);
-let min_drop = md.getFullYear()+"-"+(md.getMonth()+1)+"-"+md.getDate();
-
-pickup.setAttribute("min", min_pickup);
-drop.setAttribute("min", min_drop);
+pickup.setAttribute("min", search_query.pickup);
+drop.setAttribute("min", search_query.drop);
 
 document.querySelector(".search-bar").onsubmit = () => {
     event.preventDefault();
@@ -304,7 +302,7 @@ function displayData(arr) {
             p1.textContent = element.transmission_type + ", " + element.seat + " Seats, " + element.fuel_type;
         }
 
-        super_div.onclick = () => {selectItem(element)};
+        super_div.onclick = () => { selectItem(element) };
 
         document.querySelector(".product-display").append(super_div);
     });
@@ -345,21 +343,28 @@ btn_duration_7.onclick = () => {
 
     arr = arr.filter(element => element.vehicle == search_query.vehicle);
 
-    arr = arr.map(element => {{
-        return {...element, price: element.price += 1000};
-    }});
+    arr = arr.map(element => {
+        {
+            return { ...element, price: element.price += 1000 };
+        }
+    });
 
     displayData(arr);
 
+    let d = new Date();
+    let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+    let hr = ("0" + d.getHours()).slice(-2);
+    let min = ("0" + d.getMinutes()).slice(-2);
+
     let md = addDays(new Date(), 7);
-    let changed_drop = md.getFullYear()+"-"+(md.getMonth()+1)+"-"+md.getDate();
-    drop.value = changed_drop;
+    let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
-    let changed_pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    pickup.value = changed_pickup;
+    search_query.pickup = changed_pickup +"T"+hr+":"+min;
+    search_query.drop = changed_drop +"T"+hr+":"+min;
 
-    search_query.pickup = changed_pickup;
-    search_query.drop = changed_drop;
+    pickup.value = search_query.pickup;
+    drop.value = search_query.drop;
 
     localStorage.setItem("search_query", JSON.stringify(search_query));
 }
@@ -378,21 +383,28 @@ btn_duration_15.onclick = () => {
 
     arr = arr.filter(element => element.vehicle == search_query.vehicle);
 
-    arr = arr.map(element => {{
-        return {...element, price: element.price += 5000};
-    }});
+    arr = arr.map(element => {
+        {
+            return { ...element, price: element.price += 5000 };
+        }
+    });
 
     displayData(arr);
 
+    let d = new Date();
+    let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+    let hr = ("0" + d.getHours()).slice(-2);
+    let min = ("0" + d.getMinutes()).slice(-2);
+
     let md = addDays(new Date(), 15);
-    let changed_drop = md.getFullYear()+"-"+(md.getMonth()+1)+"-"+md.getDate();
-    drop.value = changed_drop;
+    let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
-    let changed_pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    pickup.value = changed_pickup;
+    search_query.pickup = changed_pickup +"T"+hr+":"+min;
+    search_query.drop = changed_drop +"T"+hr+":"+min;
 
-    search_query.pickup = changed_pickup;
-    search_query.drop = changed_drop;
+    pickup.value = search_query.pickup;
+    drop.value = search_query.drop;
 
     localStorage.setItem("search_query", JSON.stringify(search_query));
 }
@@ -411,21 +423,28 @@ btn_duration_30.onclick = () => {
 
     arr = arr.filter(element => element.vehicle == search_query.vehicle);
 
-    arr = arr.map(element => {{
-        return {...element, price: element.price += 10000};
-    }});
+    arr = arr.map(element => {
+        {
+            return { ...element, price: element.price += 10000 };
+        }
+    });
 
     displayData(arr);
 
+    let d = new Date();
+    let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+    let hr = ("0" + d.getHours()).slice(-2);
+    let min = ("0" + d.getMinutes()).slice(-2);
+
     let md = addDays(new Date(), 30);
-    let changed_drop = md.getFullYear()+"-"+(md.getMonth()+1)+"-"+md.getDate();
-    drop.value = changed_drop;
+    let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
-    let changed_pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    pickup.value = changed_pickup;
+    search_query.pickup = changed_pickup +"T"+hr+":"+min;
+    search_query.drop = changed_drop +"T"+hr+":"+min;
 
-    search_query.pickup = changed_pickup;
-    search_query.drop = changed_drop;
+    pickup.value = search_query.pickup;
+    drop.value = search_query.drop;
 
     localStorage.setItem("search_query", JSON.stringify(search_query));
 }
@@ -440,15 +459,20 @@ btn_duration_custom.onclick = () => {
 
     displayData(data);
 
+    let d = new Date();
+    let changed_pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+    let hr = ("0" + d.getHours()).slice(-2);
+    let min = ("0" + d.getMinutes()).slice(-2);
+
     let md = addDays(new Date(), 1);
-    let changed_drop = md.getFullYear()+"-"+(md.getMonth()+1)+"-"+md.getDate();
-    drop.value = changed_drop;
+    let changed_drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
-    let changed_pickup = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    pickup.value = changed_pickup;
+    search_query.pickup = changed_pickup +"T"+hr+":"+min;
+    search_query.drop = changed_drop +"T"+hr+":"+min;
 
-    search_query.pickup = changed_pickup;
-    search_query.drop = changed_drop;
+    pickup.value = search_query.pickup;
+    drop.value = search_query.drop;
 
     localStorage.setItem("search_query", JSON.stringify(search_query));
 }
