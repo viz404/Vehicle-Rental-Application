@@ -118,6 +118,74 @@
         height: 30px;
         border-radius: 4px;
       }
+      .input-label {
+        margin-top: 20px;
+      }
+
+      .checkbox-container {
+        position: relative;
+        padding: 12px 16px;
+        cursor: pointer;
+        display: flex;
+        flex: 1 1;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      .checkbox-container .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 3px;
+        margin-top: 20px;
+        border: 1.8px solid #77899b;
+      }
+      #checkboxid {
+        margin-top: 6px;
+        visibility: hidden;
+        cursor: pointer;
+      }
+      .marked {
+        margin-top: 11px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: lightgray;
+      }
+
+      .marked:hover {
+        background-color: darkgray;
+      }
+
+      #checkboxid:checked ~ .marked {
+        background-color: #41b6ac;
+      }
+
+      /* Create the mark/indicator (hidden when not checked) */
+      .marked:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      /* Show the mark when checked */
+      #checkboxid:checked ~ .marked:after {
+        display: block;
+      }
+      .marked:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+
       /* The Close Button */
       .close {
         color: #aaaaaa;
@@ -168,12 +236,14 @@
           <div class="social-login">
             <div id="gSigninBtn" class="social-button">
               <img
+                onclick="googlelogin()"
                 alt="google-login"
                 src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575931_google-button.png"
               />
             </div>
             <div class="social-button">
               <img
+                onclick="facebooklogin()"
                 alt="fb-login"
                 src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575846_facebook-button.png"
               />
@@ -184,6 +254,8 @@
     </div>
 
     <script>
+      var numberofattempts=JSON.parse(localStorage.getItem("numberofattempts")) || 0;
+      localStorage.setItem("numberofattempts",JSON.stringify(0));
       // Get the modal
       var modal = document.getElementById("myModal");
 
@@ -204,24 +276,27 @@
       };
 
       // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-      console.log(1);
+      // window.onclick = function (event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // };
+      console.log("Number of attempts before enter code: "+JSON.parse(localStorage.getItem("numberofattempts")));
 
       //Add event listener
       var emarr = JSON.parse(localStorage.getItem("emarr")) || [];
       document
         .querySelector("#email_mobile_number")
         .addEventListener("submit", getlogindata);
-
+        var flag_enteredonetime=false;
       function getlogindata(e) {
         e.preventDefault();
         var email_mobile_number = document.getElementById("email_number").value;
+        console.log("email number entered: "+email_mobile_number);
+        console.log("email number entered present in AD: "+emarr.includes(email_mobile_number));
         if (!emarr.includes(email_mobile_number)) {
           emarr.push(email_mobile_number);
+          localStorage.setItem("emarr", JSON.stringify(emarr));
           var div_name = document.createElement("div");
           div_name.setAttribute("class", "form-input form-width");
           div_name.setAttribute("id", "inputname");
@@ -233,6 +308,7 @@
           var input_name = document.createElement("input");
           input_name.setAttribute("class", "input-box");
           input_name.setAttribute("id", "userinputname");
+          input_name.setAttribute("required","");
 
           var label_pass = document.createElement("label");
           label_pass.setAttribute("class", "input-label");
@@ -241,13 +317,74 @@
           var input_pass = document.createElement("input");
           input_pass.setAttribute("class", "input-box");
           input_pass.setAttribute("id", "setpassword");
+          input_pass.setAttribute("required","");
 
-          div_name.append(label_name, input_name, label_pass, input_pass);
+          var checkbox_div = document.createElement("div");
+          checkbox_div.setAttribute("class", "checkbox-section");
+
+          var label_checkbox = document.createElement("label");
+          label_checkbox.setAttribute("class", "checkbox-container");
+          var checkbox_input = document.createElement("input");
+          checkbox_input.setAttribute("type", "checkbox");
+          checkbox_input.setAttribute("id", "checkboxid");
+          var checkboxspan = document.createElement("span");
+          checkboxspan.setAttribute("class", "marked");
+          checkboxspan.setAttribute("onClick", "referalcodefield()");
+
+          var textspan = document.createElement("span");
+          textspan.innerText = "I have a referral code";
+          label_checkbox.append(checkbox_input, checkboxspan, textspan);
+          checkbox_div.append(label_checkbox);
+
+          var div_floatinglabel = document.createElement("div");
+          div_floatinglabel.setAttribute("class", "floating-label form-width");
+          div_floatinglabel.setAttribute("id", "referaldiv");
+
+          var input_floating = document.createElement("input");
+          input_floating.setAttribute("class", "input-box");
+          input_floating.setAttribute("id", "floatinginput");
+          input_floating.setAttribute("autocomplete","off");
+          input_floating.setAttribute("type","text");
+          input_floating.setAttribute("placeholder","Referral Code")
+
+          div_floatinglabel.style.display="none";
+          checkbox_input.addEventListener("click", function handleClick(){
+            if(checkbox_input.checked){
+              div_floatinglabel.style.display="block";
+            }
+            else{
+              div_floatinglabel.style.display="none";
+            }
+          });
+
+          var floatingspan = document.createElement("span");
+          floatingspan.setAttribute("class", "highlight");
+
+          var floatinglabel = document.createElement("label");
+          floatinglabel.setAttribute("class", "input-label");
+          floatinglabel.innerText = "";
+
+          div_floatinglabel.append(input_floating,floatingspan, floatinglabel);
+
+          div_name.append(
+            label_name,
+            input_name,
+            label_pass,
+            input_pass,
+            checkbox_div,
+            div_floatinglabel
+          );
           document.querySelector("#form_input").append(div_name);
           document
             .querySelector("#email_mobile_number")
             .addEventListener("submit", savelogindata);
         } else {
+          console.log("email number entered present in AD: "+emarr.includes(email_mobile_number) +" Now creating password box as attempts are "+JSON.parse(localStorage.getItem("numberofattempts")));
+          if(JSON.parse(localStorage.getItem("numberofattempts"))===0){
+            console.log("Now creating password box as attempts are 0");
+            var numberofattempts=JSON.parse(localStorage.getItem("numberofattempts"));
+            
+          localStorage.setItem("numberofattempts", JSON.stringify(1));
           var div_pass = document.createElement("div");
           div_pass.setAttribute("class", "form-input form-width");
           div_pass.setAttribute("id", "inputpass");
@@ -259,16 +396,19 @@
           var input_pass = document.createElement("input");
           input_pass.setAttribute("class", "input-box");
           input_pass.setAttribute("id", "passwordfilled");
+          input_pass.setAttribute("required","");
 
           div_pass.append(label_pass, input_pass);
           document.querySelector("#form_input").append(div_pass);
           document
             .querySelector("#email_mobile_number")
-            .addEventListener("submit", verifypass);
+            .addEventListener("submit", verifypass)}
+          
         }
 
-        localStorage.setItem("emarr", JSON.stringify(emarr));
+        // localStorage.setItem("emarr", JSON.stringify(emarr));
         console.log(emarr);
+
       }
 
       function savelogindata(el2) {
@@ -286,6 +426,8 @@
         console.log(logindata);
         document.getElementById("form_input").innerText = "";
         alert("Sign in Successful, Welcome to website");
+        document.getElementsByClassName("close")[0].click();
+        console.log(logindata);
       }
 
       function getpassword(el) {
@@ -295,9 +437,59 @@
       }
 
       function verifypass(el1) {
+        var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
         el1.preventDefault();
         var pass = document.getElementById("passwordfilled").value;
-        console.log("This is password filled by user: "+pass);
+        var flag = false;
+        for (var i = 0; i < logindata.length; i++) {
+          var elem = logindata[i];
+          if (elem.passwordset === pass) {
+            console.log("user found");
+            flag = true;
+            var numberofattempts=0;
+            localStorage.setItem("numberofattempts",JSON.stringify(0));
+            alert("Login successful");
+            document.getElementsByClassName("close")[0].click();
+            break;
+          }
+        }
+        if (flag === false) {
+          flag_enteredonetime=true;
+          document.getElementById("inputpass").value="";
+          alert("Please enter correct password");
+        }
+        
+        document.getElementById("inputpass").value="";
+
+      }
+
+      //Google login once clicking on google
+      function googlelogin() {
+        window.open(
+          "https://accounts.google.com/v3/signin/identifier?dsh=S168818674%3A1665509543051224&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWrKlcSBI-487kngVP56jKrjRW-BDhy6ow5bh8_cz5daqOmQ5LoWb2DSF-3JGcw6mKHNVo2r",
+          "_blank"
+        );
+      }
+      function facebooklogin() {
+        window.open(
+          "https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjY1NTA5NTkzLCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D",
+          "_blank"
+        );
+      }
+
+      function referalcodefield() {
+        //   <div class="floating-label form-width">
+        //     <input
+        //       class="floating-input"
+        //       type="text"
+        //       placeholder=" "
+        //       autocomplete="off"
+        //       value=""
+        //     />
+        //     <span class="highlight"></span>
+        //     <label>Referral Code</label>
+        //   </div>;
+        console.log("Ready to show referal code field");
       }
     </script>
   </body>
