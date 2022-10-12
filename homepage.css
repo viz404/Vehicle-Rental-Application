@@ -129,6 +129,41 @@ body {
     margin-left: 120px;
     cursor: pointer;
  }
+
+ /* login pop */
+ .login-pop {
+    width: 209px;
+    height: 360px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: absolute;
+    margin-left: 1250px;
+    display: none;
+    padding-bottom: 25px;
+    background-color: white;
+ }
+ .myprofile, .mywallet, .mybookings,
+ .mycodrivers, .mybank, .changepass, .logout {
+    display: flex;
+    cursor: pointer;
+ }
+ .myprofile:hover, .mywallet:hover, .mybookings:hover,
+ .mycodrivers:hover, .mybank:hover,
+  .changepass:hover, .logout:hover {
+    background-color: rgba(221,226,232,.5);
+ }
+ .closeLoginPop {
+    margin-left: 180px;
+    cursor: pointer;
+ }
+ .myprofile i, .mywallet i, .mybookings i,
+ .mycodrivers i, .mybank i, .changepass i, .logout i {
+    margin-top: 18px;
+    margin-right: 25px;
+    padding-left: 15px;
+ }
 /* footer */
 .footer {
     background-color: #dde2e8;

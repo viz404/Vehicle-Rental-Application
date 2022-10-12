@@ -42,7 +42,11 @@
                     <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
                     <p>My Plan</p>
                 </div>
-                <img id="myprofile" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg" alt="profile" />
+                
+                    <img class="myprofile" id="myBtn" 
+                    src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg" 
+                    alt="profile" />
+            
             </div>
         </div>
     </div>
@@ -74,6 +78,39 @@
         <div class="culture">
             <i class="fa-solid fa-kaaba"></i>
             <p>Culture</p>
+        </div>
+    </div>
+
+    <!-- login dropdown -->
+    <div class="login-pop">
+        <button class="closeLoginPop"><i class="fa-solid fa-xmark"></i></button>
+        <div class="myprofile">
+            <i class="fa-regular fa-user"></i>
+            <p>My profile</p>
+        </div>
+        <div class="mybookings">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>My bookings</p>
+        </div>
+        <div class="mycodrivers">
+            <i class="fa-regular fa-id-card"></i>
+            <p>My Co-Drivers</p>
+        </div>
+        <div class="mywallet">
+            <i class="fa-solid fa-wallet"></i>
+            <p>My Wallet</p>
+        </div>
+        <div class="mybank">
+            <i class="fa-solid fa-building-columns"></i>
+            <p>My Bank Details</p>
+        </div>
+        <div class="changepass">
+            <i class="fa-solid fa-unlock-keyhole"></i>
+            <p>Change Password</p>
+        </div>
+        <div class="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <p>Log Out</p>
         </div>
     </div>
 
@@ -447,6 +484,20 @@
     
     function closeCareer() {
         careerpop.style.display = "none";
+    }
+
+    var login = document.getElementsByClassName("myprofile")[0];
+    var loginPop = document.getElementsByClassName("login-pop")[0];
+    var closeLoginPop = document.getElementsByClassName("closeLoginPop")[0];
+
+    login.addEventListener("click", openLogin);
+    closeLoginPop.addEventListener("click", closeLogin);
+
+    function openLogin() {
+        loginPop.style.display = "block";
+    }
+    function closeLogin() {
+        loginPop.style.display = "none";
     }
     let current_vehicle = "car";
     var car = document.getElementById("car");
