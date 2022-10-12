@@ -8,8 +8,10 @@ let eng_icon = document.querySelector("#engine_icon");
 let eng_txt = document.querySelector("#engine");
 let fuel_icon = document.querySelector("#fuel_icon");
 let fuel_txt = document.querySelector("#fuel-type");
-
 fuel_txt.textContent = select_item.fuel_type;
+
+let product_image = document.querySelector("#car-image");
+product_image.setAttribute("src", select_item.img);
 
 if (search_query.vehicle == "car") {
     bike_icon.style.opacity = "14%";
@@ -19,6 +21,9 @@ if (search_query.vehicle == "car") {
     car_icon.style.opacity = "14%";
     fuel_icon.style.display = "none";
     fuel_txt.style.display = "none";
+    product_image.style.position = "relative";
+    product_image.style.bottom = "50px";
+    eng_txt.textContent = select_item.engine_capacity+" cc";
 }
 
 car_icon.onclick = () => {
@@ -115,9 +120,6 @@ transmission_type.textContent = select_item.transmission_type;
 
 let seats = document.querySelector("#seats");
 seats.textContent = select_item.seat + " Seater";
-
-let product_image = document.querySelector("#car-image");
-product_image.setAttribute("src", select_item.img);
 
 let pickup_date = document.querySelector("#pickupDate");
 pickup_date.textContent = search_query.pickup.slice(8, 10);
