@@ -227,7 +227,7 @@
                 from Bengaluru airport and drive yourself at half the price
             </h4>
             <h4 class="feature">This feature is only available on app.<span class="download">DOWNLOAD NOW</span></h4>
-            <a href="#"><button class="knowmoreBtn">KNOW MORE</button></a>
+            <a href="airport_rides/airportRide.html"><button class="knowmoreBtn">KNOW MORE</button></a>
         </div>
         <div>
             <img id="phone" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1565086561_iPhoneXTemplate%402x.png" alt="phone displaying map" />
@@ -268,7 +268,7 @@
             <h2><span id="text-shadow">JUST CONNECT</span>- BE A PART OF DRIVEZY</h2>
             <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566567323_Listyourvehicle.svg" alt="image" />
             <h4>List your vehicle on Drivezy and turn it into an earning member of the family.</h4>
-            <a href="#"><button class="knowmoreBtn">KNOW MORE</button></a> 
+            <a href="just_connect/justConnect.html"><button class="knowmoreBtn">KNOW MORE</button></a> 
         </div>
     </div>
 
@@ -473,25 +473,30 @@
 
     function setData() {
         var location = document.getElementById("input-bar").value; 
-        console.log(current_vehicle);
-        console.log(location);
+
         let d = new Date();
-        let pickup = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+        let pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+        let hr = ("0" + d.getHours()).slice(-2);
+        let min = ("0" + d.getMinutes()).slice(-2);
+
         let md = addDays(new Date(), 1);
-        let drop = md.getFullYear() + "-" + (md.getMonth() + 1) + "-" + (md.getDate());
+        let drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
         let obj = {
             vehicle: current_vehicle,
             location: location,
-            pickup: pickup,
-            drop: drop
+            pickup: pickup +"T"+hr+":"+min,
+            drop: drop +"T"+hr+":"+min
         }
+
         localStorage.setItem("search_query", JSON.stringify(obj));
+
+        window.location.href = "product-page/products-page.html"
     }
     function addDays(date, days) {
         var result = new Date(date);
         result.setDate(result.getDate() + days);
         return result;
     }
-
 </script>
