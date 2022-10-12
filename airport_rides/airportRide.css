@@ -229,3 +229,130 @@ margin-top: 100px;
 
 
 
+ /* navbar */
+  
+ .container {
+  max-width: 1350px;
+  display: flex;
+  justify-content: space-between;
+}
+.leftbar, .rightbar {
+  display: flex;
+}
+.country {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.country img, .myplans img {
+  margin-right: 10px;
+  
+}
+.city {
+  display: flex;
+  cursor: pointer;
+} 
+.earnwithus, .careers {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.myplans {
+  display: flex;
+  cursor: pointer;
+  margin-right: 30px;
+}
+#drivezy-logo,  #myprofile {
+  cursor: pointer;
+}
+#drivezy-logo {
+  margin-left: 70px;
+}
+/* footer */
+.footer {
+  background-color: #dde2e8;
+  padding: 80px;
+  padding-top: 60px;
+}
+ul {
+  list-style: none;
+  margin-left: -50px;
+}
+.headline > h2 {
+  margin-bottom: 40px;
+}
+.footer p {
+  color: #77899b;
+}
+ul > li {
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #77899b;
+}
+.riding > li:hover {
+  color: black;
+}
+
+/* support-section */
+.support-section {
+  background-color: #1C2736;
+  padding: 80px;
+  color: #77899b;
+}
+.support-section-top {
+  display: flex;
+  justify-content: space-between;
+}
+.mail, .phone {
+  display: flex;
+  margin-bottom: 20px;
+}
+.mail img, .phone img {
+  margin-right: 7px;
+ 
+}
+#support-section-logo {
+  margin-left: -15px;
+  margin-bottom: 20px;
+}
+.social-media img:first-child {
+  margin-right: 15px;
+}
+.rightpart {
+  display: flex;
+}
+
+.company, .policies, .quick-links {
+  display: flex;
+  flex-direction: column;
+}
+.company-dropdown, .policy-dropdown, .quick-links-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.company > h5, .policies > h5, .quick-links > h5 {
+  font-size: 16px;
+  color: white;
+  margin-left: 20px;
+}
+.company-dropdown > li, .policy-dropdown> li, .quick-links-dropdown > li{
+  margin: 8px 30px;
+}
+.support-section-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.twitter img:nth-child(2) {
+  margin: 0 20px;
+}
+.twitter img:nth-child(3) {
+  margin-right: 50px;
+}
+
+
+
