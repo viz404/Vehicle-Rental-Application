@@ -34,22 +34,35 @@
 
 </html>
 <script>
+    let d = new Date();
+
+    let yr = d.getFullYear();
+    let mth = ("0" + (d.getMonth() + 1)).slice(-2);
+    let day = ("0" + d.getDate()).slice(-2);
+    let hr = ("0" + d.getHours()).slice(-2);
+    let min = ("0" + d.getMinutes()).slice(-2);
+    let fullDatetime = yr + "-" + mth + "-" + day + "T" + hr + ":" + min;
+
     document.querySelector("form").onsubmit = () => {
         event.preventDefault();
 
         let vehicle = document.querySelector("#vehicle").value;
         let location = document.querySelector("#location").value;
-        
+
         let d = new Date();
-        let pickup = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+        let pickup = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+
+        let hr = ("0" + d.getHours()).slice(-2);
+        let min = ("0" + d.getMinutes()).slice(-2);
+
         let md = addDays(new Date(), 1);
-        let drop = md.getFullYear() + "-" + (md.getMonth() + 1) + "-" + (md.getDate());
+        let drop = md.getFullYear() + "-" + ("0" + (md.getMonth() + 1)).slice(-2) + "-" + ("0" + md.getDate()).slice(-2);
 
         let obj = {
             vehicle: vehicle,
             location: location,
-            pickup: pickup,
-            drop: drop
+            pickup: pickup +"T"+hr+":"+min,
+            drop: drop +"T"+hr+":"+min
         }
         localStorage.setItem("search_query", JSON.stringify(obj));
     }

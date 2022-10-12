@@ -79,11 +79,11 @@
             </div>
             <div>
                 <p>Select your pickup date & time</p>
-                <input type="date" name="pickup-time" id="pickup-time">
+                <input type="datetime-local" name="pickup-date" id="pickup-date">
             </div>
             <div>
                 <p>Select your drop date & time</p>
-                <input type="date" name="drop-time" id="drop-time">
+                <input type="datetime-local" name="drop-date" id="drop-date">
             </div>
             <div>
                 <p>&nbsp;</p>
@@ -92,6 +92,8 @@
         </form>
     </section>
 
+    <!-- item display -->
+
     <section class="item-container">
         <div class="left-container">
             <div class="product-desc">
@@ -99,18 +101,20 @@
                     <h3>Hyundai Eon (Pterol)</h3>
                     <div>
                         <img src="https://drivezy.com/static/media/Manual.da2da54d.svg" alt="gear icon">
-                        <span id="transmission">Manual</span>
+                        <span id="transmission"></span>
                         <img src="https://drivezy.com/static/media/seats.b777050d.svg" alt="seat icon">
-                        <span id="seats">5 Seater</span>
-                        <img src="https://drivezy.com/static/media/fuel.5001188a.svg" alt="fuel icon">
-                        <span id="fuel">Petrol</span>
+                        <span id="seats"></span>
+                        <img src="https://drivezy.com/static/media/fuel.5001188a.svg" alt="fuel icon" id="fuel_icon">
+                        <span id="fuel-type"></span>
+                        <img src="https://drivezy.com/static/media/engine_capacity.b3073326.svg" alt="engine" style="top: 0;" id="engine_icon">
+                        <span id="engine"></span>
                     </div>
                     <p class="note">Note: This image is for representation purpose only. The colour of the actual
                         vehicle
                         may differ.</p>
                 </div>
                 <div>
-                    <img id="car-image" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1558698293_eon.png"
+                    <img id="car-image" src=""
                         alt="car">
                 </div>
             </div>
@@ -119,7 +123,7 @@
                 <div>
                     <span>Selected Package</span>
                     <select name="fuel" id="fuel">
-                        <option value="No Fuel">No Fuel</option>
+                        <option value="">No Fuel</option>
                         <option value="120">120 km</option>
                         <option value="240">240 km</option>
                         <option value="360">360 km</option>
@@ -136,21 +140,21 @@
                     <div class="date-style">
                         <div id="pickupDate">11</div>
                         <div>
-                            <span id="pickup-month">Oct-2022</span>
-                            <span class="time">02:00 PM</span>
+                            <span id="pickup-month"></span>
+                            <span id="pickup-time"></span>
                         </div>
                     </div>
                     <div>
-                        <div>
-                            <p>Duration</p><span>1d</span>
-                        </div>
                         <hr>
+                        <div>
+                            <p>Duration</p><span id="duration"></span>
+                        </div>
                     </div>
                     <div class="date-style">
-                        <div id="dropDate">12</div>
+                        <div id="dropDate"></div>
                         <div>
-                            <span id="drop-month">Oct-2022</span>
-                            <span class="time">02:00 PM</span>
+                            <span id="drop-month"></span>
+                            <span id="drop-time"></span>
                         </div>
                     </div>
                 </div>
@@ -161,26 +165,28 @@
                                 <img src="https://drivezy.com/static/media/location_icon.a7c35c82.svg"
                                     alt="location logo">
                             </div>
-                            <div><span id="location">Bellanduru (New)</span></div>
+                            <div>
+                                <span class="car-location subtle-green"></span>
+                            </div>
                         </div>
                         <div>
-                            <p>WMHC+8VP, Green Glen Layout, Bellandur, Bengaluru,</p>
-                            <p>Karnataka 560103, India</p>
-                            <p>0.0 km away</p>
+                            <p class="note"><span class="car-location"></span> Bengaluru, Karnataka 560068</p>
+                            <p class="distance"><b></b></p>
                         </div>
-                        <div class="address">
+                    </div>
+                    <div class="address address-right">
+                        <div>
                             <div>
-                                <div>
-                                    <img src="https://drivezy.com/static/media/location_icon.a7c35c82.svg"
-                                        alt="location logo">
-                                </div>
-                                <div><span id="location">Bellanduru (New)</span></div>
+                                <img src="https://drivezy.com/static/media/location_icon.a7c35c82.svg"
+                                    alt="location logo">
                             </div>
                             <div>
-                                <p>WMHC+8VP, Green Glen Layout, Bellandur, Bengaluru,</p>
-                                <p>Karnataka 560103, India</p>
-                                <p>0.0 km away</p>
+                                <span class="car-location subtle-green"></span>
                             </div>
+                        </div>
+                        <div>
+                            <p class="note"><span class="car-location"></span> Bengaluru, Karnataka 560068</p>
+                            <p class="distance"><b></b></p>
                         </div>
                     </div>
                 </div>
@@ -207,35 +213,64 @@
             </div>
         </div>
         <div class="right-container">
+            <p>Fare Details</p>
             <div class="fare-top">
-                <p>Fare Details</p>
                 <div>
-                    <span>Weekday Charges</span>
-                    <span id="price">₹1,520.64</span>
+                    <span class="subtle-blue">Weekday Charges</span>
+                    <span class="price"></span>
                 </div>
                 <div>
-                    <span>Security Deposit</span>
-                    <span>₹5000</span>
+                    <span class="subtle-blue">Security Deposit</span>
+                    <span>₹0</span>
                 </div>
             </div>
             <div class="fare-bottom">
                 <div>
-                    <span>Total fare</span>
-                    <span id="total-price">₹1521</span>
+                    <span><b>Total fare</b></span>
+                    <span class="price"><b></b></span>
                 </div>
                 <ul>
-                    <li class="yellow">
-                        Refundable deposit amount will be collected at the venue before ride start.
-                    </li>
-                    <li>
-                        Refundable deposit amount will be collected at the venue before ride start.
+                    <li class="note">
+                        This price is rounded off and is inclusive of GST
                     </li>
                 </ul>
-                <span>Have a coupon ?</span>
-                <span><b id="coupon">APPLY HERE</b></span>
+                <p>Have a coupon ?</p>
+                <p><b id="coupon">APPLY HERE</b></p>
             </div>
         </div>
     </section>
+    <footer>
+        <section class="checkout-footer">
+            <div class="left-footer">
+                <div>
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                </div>
+                <div>
+                    <p>
+                        Vishal, You are just one step away from confirming your booking. Confirm that you are above 21
+                        and you agree to all the terms mentioned in <a href="#">Terms & Conditions</a>
+                    </p>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="fare-text">
+                    <div>
+                        <span>To Pay</span>
+                        <span class="price"></span>
+                    </div>
+                    <div>
+                        <a href="#" class="subtle-green">Show breakup</a>
+                    </div>
+                </div>
+                <div>
+                    <button id="cart_btn" disabled><b>ADD TO CART</b></button>
+                </div>
+                <div>
+                    <button id="book_btn" disabled><b>QUICK BOOK</b></button>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>
