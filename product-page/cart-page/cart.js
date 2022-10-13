@@ -1,15 +1,16 @@
 let cart_arr = JSON.parse(localStorage.getItem("cart_arr")) || [];
 
-if (cart_arr.length == 0) {
-    let footer = document.querySelector("footer");
-    footer.style.display = "none";
-} else {
-    let empty_container = document.querySelector(".empty-cart");
-    empty_container.style.display = "none";
-    displayData(cart_arr);
-}
+displayData(cart_arr);
 
 function displayData(arr) {
+    let empty_container = document.querySelector(".empty-cart");
+    if (cart_arr.length == 0) {
+        let footer = document.querySelector("footer");
+        footer.style.display = "none";
+        empty_container.style.display = "block";
+    } else {        
+        empty_container.style.display = "none";        
+    }
     document.querySelector(".cart-items-container").innerHTML = null;
 
     arr.map((element, index) => {
@@ -66,14 +67,12 @@ function displayData(arr) {
             p1.textContent = element.transmission_type + ", " + element.seat + " Seats, " + element.fuel_type;
         }
 
-        super_div.onclick = () => { selectItem(element) };
-
         document.querySelector(".cart-items-container").append(super_div);
     });
 }
 
 function deleteItem(index) {
     cart_arr.splice(index, 1);
-    // localStorage.setItem("cart_arr", JSON.stringify(cart_arr));
+    localStorage.setItem("cart_arr", JSON.stringify(cart_arr));
     displayData(cart_arr);
 }
