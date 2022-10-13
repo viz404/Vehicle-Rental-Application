@@ -259,7 +259,8 @@ ul > li {
     width: 80px;
 }
 .choose-options {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: space-between;
     padding: 30px;
     padding-left: 100px;
@@ -747,4 +748,74 @@ ul > li {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+  @media only screen and (min-width: 500px) and (max-width: 1050px) {
+    /* navbar */
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* earn with us pop */
+    .earn-pop {
+        margin-left: 10px;
+    }
+
+    /* careers pop */
+    .careers-pop {
+        margin-left: 420px;
+    }
+
+    /* login pop */ 
+    .login-pop {
+        margin-left: 580px
+    }
+
+    /* fixed bar section */ 
+    .fixed {
+        width: 1000px;
+    }
+
+    /* main searching section */
+    .heading {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-search-bar {
+        width: 800px
+    }
+    .search-location > select {
+        width: 400px;
+    }
+
+    /* airport ride section */
+    .airport-rides {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    /* just-connect section */
+    .just-connect {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* slider-section */ 
+    .slider-section {
+        width: 800px;
+    }
+
+    /* why choose drivezy section */ 
+    .choose-options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* login sign up page */
+    .social-login {
+        align-items: center;
+        flex-direction: column;
+    }
+
   }
