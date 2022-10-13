@@ -1,5 +1,7 @@
 let search_query = JSON.parse(localStorage.getItem("search_query"));
 let select_item = JSON.parse(localStorage.getItem("select_item"));
+select_item.fuel_price = 0;
+localStorage.setItem("select_item", JSON.stringify(select_item));
 
 let car_icon = document.querySelector("#car-icon");
 let bike_icon = document.querySelector("#bike-icon");
@@ -23,7 +25,7 @@ if (search_query.vehicle == "car") {
     fuel_txt.style.display = "none";
     product_image.style.position = "relative";
     product_image.style.bottom = "50px";
-    eng_txt.textContent = select_item.engine_capacity+" cc";
+    eng_txt.textContent = select_item.engine_capacity + " cc";
 }
 
 car_icon.onclick = () => {
@@ -97,7 +99,7 @@ function getMonthName(num) {
 }
 
 function getMonthDays(name) {
-    switch(name) {
+    switch (name) {
         case "01": return 31;
         case "02": return 28;
         case "03": return 31;
@@ -174,34 +176,35 @@ if (dr_month > pick_month) {
 }
 
 let duration = document.querySelector("#duration");
-duration.textContent = total_duration +"d";
+duration.textContent = total_duration + "d";
 
+displayPrice();
 
-let price = document.querySelectorAll(".price");
-price.forEach(element => {
-    element.textContent = "₹"+select_item.price;
-})
-
-let defaulPrice = select_item.price;
+function displayPrice() {
+    let price = document.querySelectorAll(".price");
+    price.forEach(element => {
+        let fuel_price = select_item.fuel_price;
+        let item_price = select_item.price;
+        element.textContent = "₹" + (item_price + fuel_price);
+    })
+}
 
 let fuel_package = document.querySelector("#fuel");
 fuel_package.onchange = () => {
-    let vehichle_price = defaulPrice;
+    let vehichle_price = 0;
     let val = fuel_package.value;
     if (val != "") {
         vehichle_price += 5 * parseInt(val);
     }
-    price.forEach(element => {
-        element.textContent = vehichle_price;
-    })
-    select_item.price = vehichle_price;
+    select_item.fuel_price = vehichle_price;
     localStorage.setItem("select_item", JSON.stringify(select_item));
+    displayPrice();
 }
 
 let checkBox = document.querySelector("#checkbox");
 let cart_btn = document.querySelector("#cart_btn");
 let book_btn = document.querySelector("#book_btn");
-checkBox.onchange = () =>{
+checkBox.onchange = () => {
     if (checkBox.checked) {
         cart_btn.removeAttribute("disabled");
         book_btn.removeAttribute("disabled");
