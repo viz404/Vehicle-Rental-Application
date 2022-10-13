@@ -213,3 +213,31 @@ checkBox.onchange = () => {
         book_btn.setAttribute("disabled", "");
     }
 }
+
+cart_btn.onclick = () => {
+    let cart_arr = JSON.parse(localStorage.getItem("cart_arr")) || [];
+
+    select_item.con_fee = 99;
+    select_item.pickup_time = search_query.pickup;
+    select_item.drop_time = search_query.drop;
+    select_item.location = search_query.location;
+    let flag = false;
+
+    if (cart_arr.length > 0) {
+        cart_arr.forEach(element => {
+            if (JSON.stringify(element) === JSON.stringify(select_item)) {
+                flag = true;
+                return;
+            }
+        })
+    }
+
+    if (flag) {
+        alert("Item already exists");
+    } else {
+        cart_arr.push(select_item);
+        alert("Item successfully added to cart")
+    }
+
+    localStorage.setItem("cart_arr", JSON.stringify(cart_arr));
+}
