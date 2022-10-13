@@ -42,14 +42,60 @@
                     <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
                     <p>My Plan</p>
                 </div>
-                
                     <img class="myprofile" id="myBtn" 
                     src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg" 
                     alt="profile" />
-            
             </div>
         </div>
     </div>
+
+    <!-- login-sign up page -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modalcontent">
+          <div class="modalheader">
+            Login/SignUp <span class="close">&times;</span>
+          </div>
+          <div class="modalbody">
+            <div class="description">Welcome to drivezy!</div>
+            <form id="email_mobile_number">
+              <div class="form-input form-width" id="form_input">
+                <label class="input-label">Email address / Phone</label
+                ><input
+                  class="input-box"
+                  id="email_number"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="button_section" id="button_section">
+                <button id="proceed" type="submit">PROCEED</button>
+              </div>
+            </form>
+            <div class="center-text">
+              <span class="line"></span><span class="or">Or</span
+              ><span class="line"></span>
+            </div>
+            <div class="social-login">
+              <div id="gSigninBtn" class="social-button">
+                <img
+                  onclick="googlelogin()"
+                  alt="google-login"
+                  src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575931_google-button.png"
+                />
+              </div>
+              <div class="social-button">
+                <img
+                  onclick="facebooklogin()"
+                  alt="fb-login"
+                  src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575846_facebook-button.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- earn with us popover --> 
     <div class="earn-pop">
@@ -108,7 +154,7 @@
             <i class="fa-solid fa-unlock-keyhole"></i>
             <p>Change Password</p>
         </div>
-        <div class="logout">
+        <div class="logout" id="logout">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <p>Log Out</p>
         </div>
@@ -433,6 +479,7 @@
 </body>
 </html>
 <script>
+    let loginFlag = localStorage.getItem("loginFlag") || 0;
     // fixed section 
     var cancelBtn = document.getElementsByClassName("cancelBtn")[0];
     var fixed = document.getElementsByClassName("fixed")[0];
@@ -490,7 +537,7 @@
     var loginPop = document.getElementsByClassName("login-pop")[0];
     var closeLoginPop = document.getElementsByClassName("closeLoginPop")[0];
 
-    login.addEventListener("click", openLogin);
+    //login.addEventListener("click", openLogin);
     closeLoginPop.addEventListener("click", closeLogin);
 
     function openLogin() {
@@ -550,4 +597,265 @@
         result.setDate(result.getDate() + days);
         return result;
     }
+
+    var logout = document.getElementById("logout");
+    //logout.addEventListener("click", logoutLogin);
+    // function logoutLogin() {
+    //     loginFlag = 0;
+    // }
+    // login signup page
+    var numberofattempts=JSON.parse(localStorage.getItem("numberofattempts")) || 0;
+      localStorage.setItem("numberofattempts", 0);
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.addEventListener("click", function () {
+        //console.log(loginFlag);
+        if(loginFlag == 1) {
+            //console.log(loginFlag);
+            modal.style.display = "none";
+            // loginPop.style.display = "block";
+            openLogin();
+        } else {
+            modal.style.display = "block";
+        }
+      });
+      // btn.onclick = function () {
+      //   modal.style.display = "block";
+      // };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      // window.onclick = function (event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // };
+      console.log("Number of attempts before enter code: "+JSON.parse(localStorage.getItem("numberofattempts")));
+
+      //Add event listener
+      var emarr = JSON.parse(localStorage.getItem("emarr")) || [];
+      document
+        .querySelector("#email_mobile_number")
+        .addEventListener("submit", getlogindata);
+        var flag_enteredonetime=false;
+      function getlogindata(e) {
+        e.preventDefault();
+        var email_mobile_number = document.getElementById("email_number").value;
+        console.log("email number entered: "+email_mobile_number);
+        console.log("email number entered present in AD: "+emarr.includes(email_mobile_number));
+        if (!emarr.includes(email_mobile_number)) {
+          emarr.push(email_mobile_number);
+          localStorage.setItem("emarr", JSON.stringify(emarr));
+          var div_name = document.createElement("div");
+          div_name.setAttribute("class", "form-input form-width");
+          div_name.setAttribute("id", "inputname");
+
+          var label_name = document.createElement("label");
+          label_name.setAttribute("class", "input-label");
+          label_name.innerText = "Enter name";
+
+          var input_name = document.createElement("input");
+          input_name.setAttribute("class", "input-box");
+          input_name.setAttribute("id", "userinputname");
+          input_name.setAttribute("required","");
+
+          var label_pass = document.createElement("label");
+          label_pass.setAttribute("class", "input-label");
+          label_pass.innerText = "Enter Password";
+
+          var input_pass = document.createElement("input");
+          input_pass.setAttribute("class", "input-box");
+          input_pass.setAttribute("id", "setpassword");
+          input_pass.setAttribute("required","");
+
+          var checkbox_div = document.createElement("div");
+          checkbox_div.setAttribute("class", "checkbox-section");
+
+          var label_checkbox = document.createElement("label");
+          label_checkbox.setAttribute("class", "checkbox-container");
+          var checkbox_input = document.createElement("input");
+          checkbox_input.setAttribute("type", "checkbox");
+          checkbox_input.setAttribute("id", "checkboxid");
+          var checkboxspan = document.createElement("span");
+          checkboxspan.setAttribute("class", "marked");
+          checkboxspan.setAttribute("onClick", "referalcodefield()");
+
+          var textspan = document.createElement("span");
+          textspan.innerText = "I have a referral code";
+          label_checkbox.append(checkbox_input, checkboxspan, textspan);
+          checkbox_div.append(label_checkbox);
+
+          var div_floatinglabel = document.createElement("div");
+          div_floatinglabel.setAttribute("class", "floating-label form-width");
+          div_floatinglabel.setAttribute("id", "referaldiv");
+
+          var input_floating = document.createElement("input");
+          input_floating.setAttribute("class", "input-box");
+          input_floating.setAttribute("id", "floatinginput");
+          input_floating.setAttribute("autocomplete","off");
+          input_floating.setAttribute("type","text");
+          input_floating.setAttribute("placeholder","Referral Code")
+
+          div_floatinglabel.style.display="none";
+          checkbox_input.addEventListener("click", function handleClick(){
+            if(checkbox_input.checked){
+              div_floatinglabel.style.display="block";
+            }
+            else{
+              div_floatinglabel.style.display="none";
+            }
+          });
+
+          var floatingspan = document.createElement("span");
+          floatingspan.setAttribute("class", "highlight");
+
+          var floatinglabel = document.createElement("label");
+          floatinglabel.setAttribute("class", "input-label");
+          floatinglabel.innerText = "";
+
+          div_floatinglabel.append(input_floating,floatingspan, floatinglabel);
+
+          div_name.append(
+            label_name,
+            input_name,
+            label_pass,
+            input_pass,
+            checkbox_div,
+            div_floatinglabel
+          );
+          document.querySelector("#form_input").append(div_name);
+          document
+            .querySelector("#email_mobile_number")
+            .addEventListener("submit", savelogindata);
+        } else {
+          console.log("email number entered present in AD: "+emarr.includes(email_mobile_number) +" Now creating password box as attempts are "+JSON.parse(localStorage.getItem("numberofattempts")));
+          if(JSON.parse(localStorage.getItem("numberofattempts"))==0){
+            console.log("Now creating password box as attempts are 0");
+            numberofattempts=JSON.parse(localStorage.getItem("numberofattempts"));
+            
+          localStorage.setItem("numberofattempts", JSON.stringify(1));
+          var div_pass = document.createElement("div");
+          div_pass.setAttribute("class", "form-input form-width");
+          div_pass.setAttribute("id", "inputpass");
+
+          var label_pass = document.createElement("label");
+          label_pass.setAttribute("class", "input-label");
+          label_pass.innerText = "Enter password";
+
+          var input_pass = document.createElement("input");
+          input_pass.setAttribute("class", "input-box");
+          input_pass.setAttribute("id", "passwordfilled");
+          input_pass.setAttribute("required","");
+
+          div_pass.append(label_pass, input_pass);
+          document.querySelector("#form_input").append(div_pass);
+          document
+            .querySelector("#email_mobile_number")
+            .addEventListener("submit", verifypass)}
+          
+        }
+
+        // localStorage.setItem("emarr", JSON.stringify(emarr));
+        console.log(emarr);
+
+      }
+
+      function savelogindata(el2) {
+        var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
+        el2.preventDefault();
+        console.log(document.getElementById("userinputname").value);
+        var obj = {
+          email_mobile_number: document.getElementById("email_number").value,
+          name: document.getElementById("userinputname").value,
+
+          passwordset: document.getElementById("setpassword").value,
+        };
+        logindata.push(obj);
+        localStorage.setItem("logindata", JSON.stringify(logindata));
+        numberofattempts = 0;
+        console.log(logindata);
+        document.getElementById("form_input").innerText = "";
+        alert("Sign in Successful, Welcome to website");
+        document.getElementsByClassName("close")[0].click();
+        console.log(logindata);
+        getlogindata();
+      }
+
+      function getpassword(el) {
+        el.preventDefault();
+
+        console.log("added event listener to get password");
+      }
+    //   let loginFlag = localStorage.getItem("loginFlag") || 0;
+      function verifypass(el1) {
+        var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
+        el1.preventDefault();
+        var pass = document.getElementById("passwordfilled").value;
+        var flag = false;
+        for (var i = 0; i < logindata.length; i++) {
+          var elem = logindata[i];
+          if (elem.passwordset === pass) {
+            console.log("user found");
+            flag = true;
+            var numberofattempts=0;
+            localStorage.setItem("numberofattempts",JSON.stringify(0));
+            alert("Login successful");
+            document.getElementsByClassName("close")[0].click();
+            localStorage.setItem("loginFlag", 1);
+            loginFlag = 1;
+            modal.style.display = "none";
+            location.reload();
+            break;
+          }
+        }
+        if (flag === false) {
+          flag_enteredonetime=true;
+          document.getElementById("inputpass").value="";
+          alert("Please enter correct password");
+        }
+        
+        document.getElementById("inputpass").value="";
+
+      }
+
+      //Google login once clicking on google
+      function googlelogin() {
+        window.open(
+          "https://accounts.google.com/v3/signin/identifier?dsh=S168818674%3A1665509543051224&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWrKlcSBI-487kngVP56jKrjRW-BDhy6ow5bh8_cz5daqOmQ5LoWb2DSF-3JGcw6mKHNVo2r",
+          "_blank"
+        );
+      }
+      function facebooklogin() {
+        window.open(
+          "https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjY1NTA5NTkzLCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D",
+          "_blank"
+        );
+      }
+
+      function referalcodefield() {
+        //   <div class="floating-label form-width">
+        //     <input
+        //       class="floating-input"
+        //       type="text"
+        //       placeholder=" "
+        //       autocomplete="off"
+        //       value=""
+        //     />
+        //     <span class="highlight"></span>
+        //     <label>Referral Code</label>
+        //   </div>;
+        console.log("Ready to show referal code field");
+      }
 </script>
