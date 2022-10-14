@@ -118,6 +118,9 @@ function getMonthDays(name) {
 
 // item section
 
+let car_name = document.querySelector("#car_name");
+car_name.textContent = select_item.vehicle_name;
+
 let transmission_type = document.querySelector("#transmission");
 transmission_type.textContent = select_item.transmission_type;
 
@@ -253,6 +256,7 @@ book_btn.onclick = () => {
     checkout_arr.push(select_item);
     localStorage.setItem("quickBookFlag", 0);
     localStorage.setItem("checkout_arr", JSON.stringify(checkout_arr));
+    window.location.href = "../../payment_page/checkOut.html"
 }
 
 
