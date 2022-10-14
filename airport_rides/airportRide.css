@@ -123,10 +123,9 @@
     display: flex;
     width: 50%;
     justify-content: center;
+
   }
-  .top>div:last-child{
-    border-left: 1px solid rgb(211, 211, 211);
-  }
+  
   .top .div_image{  
     margin-right: 20px;
   }
@@ -172,15 +171,16 @@ margin-top: 100px;
 
   }
   .container>.left{
-    width: 40%;
+    width: 500px;
   }
   .container>.left>img{
-    width: 100%;
+    width: 500px;
   }
   .container>.right>div{
     
     margin: 50px;
     padding: 20px 30px;
+    
   }
   
   .right li{
@@ -205,7 +205,7 @@ margin-top: 100px;
     justify-content: space-around;
   }
   .container_pics>.container>.con_ride{
-    width: 25%;
+    width: 300px;
     padding: 20px 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: white;
@@ -213,7 +213,7 @@ margin-top: 100px;
     border-radius: 5px;
   }
   .con_ride> img{
-    width: 100%;
+    width: 300px;
   }
   .con_ride>h2{
     font-weight: 500;
@@ -353,6 +353,58 @@ ul > li {
 .twitter img:nth-child(3) {
   margin-right: 50px;
 }
+.border_left{
+  border-left:1px solid rgb(219, 217, 215) ;
+}
 
 
+/* Media query */
 
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .container_cost>.top{
+    width: 400px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 10px;
+  }
+  .con_top{
+  
+    padding: 5%;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+    border: none;
+    
+  }
+  .border_left{
+    border: none;
+  }
+  .container_ride>.container{
+    display: block;
+    margin: 0% 8%;
+    justify-content: space-between;
+    
+
+  }
+  .container_pics>.container{
+    display: block;
+    width: 90%;
+    margin: 60px 2% 0;
+    justify-content: space-around;
+
+  }
+  .container>.con_ride{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+  .airport_head{
+    display: block;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
