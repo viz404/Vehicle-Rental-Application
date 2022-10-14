@@ -242,6 +242,15 @@ cart_btn.onclick = () => {
     localStorage.setItem("cart_arr", JSON.stringify(cart_arr));
 }
 
+book_btn.onclick = () => {
+    select_item.con_fee = 99;
+    select_item.pickup_time = search_query.pickup;
+    select_item.drop_time = search_query.drop;
+    select_item.location = search_query.location;
+
+    localStorage.setItem("checkout_arr", JSON.stringify(select_item));
+}
+
 
 
 
