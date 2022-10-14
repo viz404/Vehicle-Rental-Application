@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://drivezy.com/favicon.ico"
+    />
+    <link rel="stylesheet" href="checkOut.css" />
+    <script
+      src="https://kit.fontawesome.com/7a37b61242.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <div>
+        <div class="div_anim">
+           <div>
+            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg" alt="">
+            <lottie-player class="lot_anim_car" src="https://assets4.lottiefiles.com/private_files/lf30_hsabbeks.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+           </div>
+        </div>
+      <div class="main_container">
+       
+        <div class="checkout_con">
+          <h2>Checkout Summary</h2>
+          <div class="summary_con">
+            <div class="price_details">
+              <div class="caption">
+                <h3>Trip Fare</h3>
+              </div>
+              <div class="price">
+                <h3 id="txtPrice"></h3>
+              </div>
+            </div>
+            <hr />
+            <div class="price_details">
+              <div class="caption">
+                <h3>Fuel Package</h3>
+              </div>
+              <div class="price">
+                <h3 id="txtFuel"></h3>
+              </div>
+            </div>
+            <hr />
+            <div class="price_details">
+              <div class="caption">
+                <h3>Convenience Fee</h3>
+              </div>
+              <div class="price">
+                <h3 id="txtconFee"></h3>
+              </div>
+            </div>
+            <hr />
+            <div class="price_details">
+              <div class="caption caption_bold">
+                <h3>Total Fare</h3>
+              </div>
+              <div class="price caption_bold">
+                <h3 id="txtTotal"></h3>
+              </div>
+            </div>
+            <hr />
+            <div class="price_details">
+              <div class="caption">
+                <h3>Refundable Deposit</h3>
+                <p>Has been waived off for this booking</p>
+              </div>
+              <div class="price">
+                <h3 id="txtRefund"></h3>
+              </div>
+            </div>
+            <hr />
+            <div class="price_details">
+              <div class="caption caption_bold">
+                <h3>Final Fare</h3>
+              </div>
+              <div class="price caption_bold">
+                <h3 id="txtFinal">₹3,008</h3>
+              </div>
+            </div>
+            <hr />
+            <div class="payment_con">
+              <h3>Select Payment Type</h3>
+              <div
+                class="payment_types"
+                id="card_payment"
+                onclick="showPopupCard()"
+              >
+                <div class="image_con">
+                  <img
+                    src="https://zoomcar-assets.zoomcar.com/images/original/97f051d76793fffe5ab182ffa58b8eb47c5ba0cf.png?1584453494"
+                    alt=""
+                  />
+                </div>
+                <div class="payment_details">
+                  <h4>Credit / Debit / ATM Card</h4>
+                  <p>All major card providers are supported</p>
+                </div>
+              </div>
+              <hr />
+              <div class="payment_types" onclick="showPopupNet()">
+                <div class="image_con">
+                  <img
+                    src="https://zoomcar-assets.zoomcar.com/images/original/4dd051886e5403aafb9725b7d2ab42c80f9b1df6.png?1584453529"
+                    alt=""
+                  />
+                </div>
+                <div class="payment_details">
+                  <h4>Net Banking</h4>
+                  <p>All major banks are supported</p>
+                </div>
+              </div>
+              <hr />
+              <div class="payment_types" onclick="showPopupWallet()">
+                <div class="image_con">
+                  <img
+                    src="https://zoomcar-assets.zoomcar.com/images/original/1317404625e385185d23ea43a0c34569d6432d09.png?1632130014"
+                    alt=""
+                  />
+                </div>
+                <div class="payment_details">
+                  <h4>Mobile Wallet</h4>
+                  <p>Paytm Wallet + Postpaid</p>
+                </div>
+              </div>
+              <hr />
+              <div class="payment_types" onclick="showPopupUpi()">
+                <div class="image_con">
+                  <img
+                    src="https://zoomcar-assets.zoomcar.com/images/original/9fcb8335a89265849f23225858489f2a9ce8e121.png?1584453574"
+                    alt=""
+                  />
+                </div>
+                <div class="payment_details">
+                  <h4>UPI</h4>
+                  <p>Get ₹32 Instant Cashback on using any UPI payment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details_con open_popup" id="detail_con">
+            <lottie-player class="pay_anim" src="https://assets2.lottiefiles.com/packages/lf20_ltbqacam.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+          <div class="payment_popup">
+            <!-- it is card popup -->
+            <div class="card_popup open_popup" id="cards_popup">
+              <div class="head_con">
+                <div class="head">
+                  <h4>Enter Card Details</h4>
+                  <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+                </div>
+              
+              </div>
+              <form action="" class="card_form" id="card_form">
+                <div class="card_number_con">
+                  <input
+                    type="number"
+                    placeholder="Card Number"
+                    id="inCardNo"
+                    required
+                    min="16"
+                    max="16"
+                  />
+                  <div id="divcardNumError" class="error_msg"></div>
+                </div>
+                <div class="card_det_con">
+                  <div class="div_crd_det">
+                    <input
+                      type="number"
+                      placeholder="Expiry (MMYY)"
+                      id="inExpiry"
+                      required
+                    />
+                    <div id="divExpError" class="error_msg"></div>
+                  </div>
+                  <div class="div_crd_det">
+                    <input
+                      type="number"
+                      name=""
+                      id="inCvv"
+                      placeholder="CVV"
+                      required
+                    />
+                    <div id="divCvvError" class="error_msg"></div>
+                  </div>
+                </div>
+                <div class="button_con">
+                  <button onclick="payAmount()" class="pay_btn">PAY INR <span id="spnFinalPrice"></span></button>
+                </div>
+              </form>
+              <form action="" class="card_form">
+                <div class="card_number_con otp_hide" id="div_otp">
+                  <input id="inOtp" type="number" placeholder="Enter OTP" />
+                  <div id="divotpError" class="error_msg"></div>
+                </div>
+                <div class="button_con otp_hide" id="div_otp_btn">
+                  <button onclick="otpValidate()" class="pay_btn">
+                    VERIFY OTP
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- it is netbanking popup -->
+            <div class="card_popup" id="net_popup">
+              <div class="head_con">
+                <div class="head">
+                  <h4>Select Bank</h4>
+                  <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+                </div>
+              </div>
+              <div class="bank_con">
+                <div class="head">POPULAR BANKS</div>
+                <div class="banks">
+                  <div class="image">
+                    <img
+                      src="https://zoomcar-assets.zoomcar.com/images/original/f380ffaa7f80bdc586f469a53a3caea8887d84a4.png?1584601955"
+                      alt=""
+                    />
+                  </div>
+                  <div class="bank_name">
+                    <h3>HDFC Bank</h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="banks">
+                  <div class="image">
+                    <img
+                      src="https://zoomcar-assets.zoomcar.com/images/original/27eac78721d3d14bc9df34231bce661e1d510e8f.png?1584602001"
+                      alt=""
+                    />
+                  </div>
+                  <div class="bank_name">
+                    <h3>State Bank of India</h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="banks">
+                  <div class="image">
+                    <img
+                      src="https://zoomcar-assets.zoomcar.com/images/original/312f0e8f319287aa09b1e96b45a7d82cabf6184a.png?1584601979"
+                      alt=""
+                    />
+                  </div>
+                  <div class="bank_name">
+                    <h3>ICICI Netbanking</h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="banks">
+                  <div class="image">
+                    <img
+                      src="https://zoomcar-assets.zoomcar.com/images/original/d79d466d40fc7df794e2e1c907db212e52d4f47f.png?1584601931"
+                      alt=""
+                    />
+                  </div>
+                  <div class="bank_name">
+                    <h3>Axis Bank</h3>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+             <!-- it is Mobile Wallet popup -->
+      <div class="card_popup" id="wallet_popup">
+        <div class="head_con">
+          <div class="head">
+            <h4>Select Bank Account</h4>
+            <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+          </div>
+         
+        </div>
+        <div class="bank_con">
+          <div class="banks">
+            <div class="image">
+              <img
+                src="https://img1.zoomcar.com/images/original/91871c2e202fd271724063a4a38033612d37c219.png?1584602070"
+                alt=""
+              />
+            </div>
+            <div class="bank_name">
+              <h3>PayTM</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- it is UPI popup -->
+       <div class="card_popup" id="upi_popup">
+        <div class="head_con">
+          <div class="head">
+            <h4>Enter UPI ID</h4>
+            <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+          </div>
+         
+        </div>
+        <div class="upi_con">
+          <div class="upi_details">
+            <input type="text" class="upi_id" placeholder="Enter UPI Id" />
+            <a href="">
+              <button class="verify_upi">VERIFY</button>
+            </a>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+
+  var arrItems = [
+    {
+      TripFare: 1000,
+      Fuel: 191,
+      ConFee: 99,
+      Total: 3008,
+      Refund: 0,
+    },
+    {
+      TripFare: 1100,
+      Fuel: 191,
+      ConFee: 99,
+      Total: 3008,
+      Refund: 0,
+    },
+  ];
+
+  let txtPrice = document.getElementById("txtPrice");
+  let txtFuel = document.getElementById("txtFuel");
+  let txtconFee = document.getElementById("txtconFee");
+  let txtTotal = document.getElementById("txtTotal");
+  let txtRefund = document.getElementById("txtRefund");
+  let txtFinal = document.getElementById("txtFinal");
+  let spnFinalPrice = document.getElementById("spnFinalPrice");
+  let cards_popup = document.getElementById("cards_popup");
+  let net_popup = document.getElementById("net_popup");
+  let wallet_popup = document.getElementById("wallet_popup");
+  let upi_popup = document.getElementById("upi_popup");
+  let main_con = document.getElementById("main_container");
+  let div_otp = document.getElementById("div_otp");
+  let div_otp_btn = document.getElementById("div_otp_btn");
+  let inCardNo = document.getElementById("inCardNo");
+  let inExpiry = document.getElementById("inExpiry");
+  let inCvv = document.getElementById("inCvv");
+  let divcardNumError = document.getElementById("divcardNumError");
+  let divExpError = document.getElementById("divExpError");
+  let divCvvError = document.getElementById("divCvvError");
+  let divotpError=document.getElementById("divotpError")
+  let inOtp=document.getElementById("inOtp")
+  let pFinalPrice=document.getElementsByClassName("pFinalPrice")
+  let details_con=document.getElementById("detail_con")
+  //₹
+
+  console.log(arrItems);
+
+  var otPrice = 0;
+  var otFuel = 0;
+  var otConFee = 0;
+  var otRefund = 0;
+
+  otPrice = arrItems.reduce(function (total, elem) {
+    return total + elem.TripFare;
+  }, 0);
+  otFuel = arrItems.reduce(function (total, elem) {
+    return total + elem.Fuel;
+  }, 0);
+  otConFee = arrItems.reduce(function (total, elem) {
+    return total + elem.ConFee;
+  }, 0);
+  console.log(otConFee);
+  otTotal = otPrice + otFuel + otConFee;
+  txtPrice.innerText = "₹ " + otPrice;
+  txtFuel.innerText = "+ ₹ " + otFuel;
+  txtconFee.innerText = "+ ₹ " + otConFee;
+  txtTotal.innerText = "₹ " + otTotal;
+  txtRefund.innerText = "₹ " + otRefund;
+
+  var finalPrice = otTotal + otRefund;
+  txtFinal.innerText = "₹ " + finalPrice;
+  spnFinalPrice.innerText = "₹ " + finalPrice;
+
+  for(var i=0;i<pFinalPrice.length;i++){
+    pFinalPrice[i].innerText=finalPrice
+  }
+  function saveFinalPrice() {
+    event.preventDefault();
+    localStorage.setItem("Payable", finalPrice);
+    window.location = "payment_Page.html";
+  }
+  //Functions for Payment method popups
+  function showPopupCard() {
+    details_con.classList.add("open_popup")
+    cards_popup.classList.add("open_popup");
+    net_popup.classList.remove("open_popup");
+    wallet_popup.classList.remove("open_popup");
+    upi_popup.classList.remove("open_popup");
+    //console.log(popup)
+ 
+  }
+  function showPopupNet() {
+    details_con.classList.add("open_popup")
+    cards_popup.classList.remove("open_popup");
+    net_popup.classList.add("open_popup");
+    wallet_popup.classList.remove("open_popup");
+    upi_popup.classList.remove("open_popup");
+  
+  }
+  function showPopupWallet() {
+    details_con.classList.add("open_popup")
+    cards_popup.classList.remove("open_popup");
+    net_popup.classList.remove("open_popup");
+    wallet_popup.classList.add("open_popup");
+    upi_popup.classList.remove("open_popup");
+
+  }
+  function showPopupUpi() {
+    details_con.classList.add("open_popup")
+    cards_popup.classList.remove("open_popup");
+    net_popup.classList.remove("open_popup");
+    wallet_popup.classList.remove("open_popup");
+    upi_popup.classList.add("open_popup");
+   
+  }
+
+  // Function to close the popups
+  function closePopup() {
+    cards_popup.classList.remove("open_popup");
+    net_popup.classList.remove("open_popup");
+    wallet_popup.classList.remove("open_popup");
+    upi_popup.classList.remove("open_popup");
+    details_con.classList.remove("open_popup")
+  }
+//Function for Pay Button
+//Function for Pay Button
+function payAmount() {
+    event.preventDefault();
+
+    let lenCrdno = inCardNo.value.length;
+    let lenExpiry = inExpiry.value.length;
+    let lencvv = inCvv.value.length;
+
+    var flagValid = true;
+    if (lenCrdno !== 16) {
+      divcardNumError.innerText = "Enter a valid card number";
+      flagValid = false;
+    }
+    if (lenExpiry !== 4) {
+      divExpError.innerText = "Enter a valid expiry date";
+      flagValid = false;
+    }
+    if (lencvv !== 3) {
+      divCvvError.innerText = "Enter a valid cvv";
+      flagValid = false;
+    }
+
+    if (flagValid) {
+      div_otp_btn.classList.remove("otp_hide");
+      div_otp.classList.remove("otp_hide");
+    }
+    console.log(lenCrdno, lenExpiry, lencvv);
+  }
+
+  //Event listner for the Card Details input fields. to clear the error message 
+  inCardNo.addEventListener("click", (event) => {
+    divcardNumError.innerText = "";
+  });
+  inExpiry.addEventListener("click", (event) => {
+    divExpError.innerText = "";
+  });
+  inCvv.addEventListener("click", (event) => {
+    divCvvError.innerText = "";
+  });
+
+  inCardNo.onkeydown = function () {
+    divcardNumError.innerText = "";
+}
+inExpiry.onkeydown = function () {
+    divExpError.innerText = "";
+}
+inCvv.onkeydown=function(){
+    divCvvError.innerText=""
+}
+//Function for validating OTP
+let otpAttempt=3
+divotpError.innerText=otpAttempt+ " attempts Remaining"
+function otpValidate(){
+    event.preventDefault()
+    if(inOtp.value==1234){
+        alert("Payment Successful");
+            return;
+    }else{
+        alert("Wrong OTP number");
+        otpAttempt--;
+            divotpError.innerText=otpAttempt+ "Attempts Remaining"
+    }
+
+    if(otpAttempt<=0)return
+    
+
+}
+
+</script>

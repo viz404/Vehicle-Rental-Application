@@ -1,0 +1,385 @@
+/* PROXIMA NOVA FONT*/
+@font-face {
+    font-family: proxima_nova;
+    src: url(/drivezy-clone/just_connect/Proxima-Nova.bf9f5d50.ttf);
+  }
+  /* general*/
+  * {
+    font-family: "proxima_nova";
+  }
+  body>div{
+    display: flex;
+
+    margin: auto;
+    justify-content: space-around;
+
+  }
+  .div_anim{
+    display: flex;
+    margin-top: 50px;
+
+   
+  }
+
+  .div_anim>div{
+    margin: auto;
+    text-align: center;
+  }
+  .div_anim>div>img{
+    text-align: center;
+    width: 200px;
+  }
+  .lot_anim_car{
+    margin: auto;
+    
+  }
+
+  /* Main Container*/
+  .main_container{
+    display: flex;
+    width: 800px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-top: 50px;
+  
+
+    
+    
+  }
+  .main_container>.checkout_con{
+    width: 400px;
+    background-color: white;
+    padding: 10px;
+  
+  }
+  .checkout_con>h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 25px;
+    color: #f64d4d;
+  }
+  .main_container>.details_con{
+    width: 400px;
+    background-color: #f15d61;
+  
+
+
+  }
+  .details_con>.pay_anim{
+    margin: auto;
+  }
+  .checkout_con>.summary_con{
+   
+   
+    padding: 10px 20px;
+   
+}
+.summary_con>.price_details{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    
+}
+.summary_con>hr{
+    border: none;
+    border-bottom: 1px solid rgb(207, 210, 210);
+}
+.price_details h3{
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    margin: 5px 0px;
+}
+.price_details p{
+    font-size: 12px;
+    color: rgb(183, 183, 175);
+    margin: -2px 0;
+}
+.caption_bold>h3{
+    font-weight: 600;
+}
+.proceed{
+    margin: 30px 10px;
+}
+.btn_proceed{
+    background-color: #41b6ac;
+    border: none;
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn_proceed:hover{
+    background-color: white;
+    color: #41b6ac;
+    border: 1px solid #41b6ac;
+    cursor: pointer;
+}
+
+
+/* PAYMENT METHODS */
+.payment_con{
+   
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 3px 10px;
+    background-color: rgba(241, 228, 211, 0.149);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+
+}
+.payment_con>h3{
+    font-size: 16px;
+    color: #f64d4d;
+    margin: 5px 5px;
+    background-color: #41b6ac50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+}
+.payment_con>.payment_types{
+    display: flex;
+    padding: 0px 5px;    
+}
+.payment_types:hover{
+    cursor: pointer;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.payment_types>.image_con{
+    width: 20px;
+   
+    display: flex;
+
+
+}
+.image_con>img{
+    width:20px;
+    margin: auto;
+  
+}
+.payment_types>.payment_details{
+    margin: 0px 15px;
+}
+.payment_details>h4{
+    margin: 0;
+    margin: 5px 0px;
+    font-size: 12px;
+}
+.payment_details>p{
+    margin: 0;
+    font-size: 10px;
+    color: rgb(152, 148, 143);
+}
+.payment_con hr{
+    border: none;
+    border-bottom: 1px solid rgb(205, 207, 208);
+}
+
+
+
+.details_con>.payment_popup{
+    margin: auto;
+    display: flex;
+}
+/*Card Payment */
+.card_popup{
+    width: 300px;
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 300px;
+    display: none;
+}
+
+
+.card_popup>.head_con{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.card_popup>.head_con>.head>h4{
+    margin: 0;
+    font-size: 18px;
+    line-height: .7cm;
+}
+.card_popup>.head_con>.head>p{
+    margin: 0;
+    font-size: 13px;
+}
+.card_popup>.head_con>.image{
+    width: 40px;
+}
+.card_popup>.card_form>.card_number_con{
+
+    margin: 30px 0;
+}
+.card_popup>.card_form>.card_number_con input{
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.card_popup>.card_form>.card_det_con{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+.card_popup>.card_form>.card_det_con>.div_crd_det{
+    width: 45%;
+    box-sizing: border-box;
+    margin: 0;
+}
+.card_popup>.card_form>.card_det_con>.div_crd_det>input{
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.card_popup>.button_con{
+    margin: 10px 0;
+    
+}
+.card_popup>.card_form>.button_con .pay_btn{
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    
+}
+.card_popup>.card_form>.button_con .pay_btn:hover{
+    background-color: #41b6ac;
+    cursor: pointer;
+    color: white;
+}
+
+/* NET BANKING POPUP*/
+
+.bank_con{
+    margin: 25px 0;
+}
+.bank_con>.head{
+    background-color: rgb(238, 238, 238);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.bank_con>.banks{
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.bank_con>.banks:hover{
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    background-color: #eaf6f5;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.bank_con>.banks>.image{
+    width: 40px;
+    display: flex;
+    text-align: center;
+}
+.bank_con>.banks>.image>img{
+    width: 40px;
+}
+.bank_con>.banks>.bank_name{
+  
+}
+
+.bank_con>.banks>.bank_name h3{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+    
+}
+.bank_con hr{
+    border: none;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+/* UPI POPUS */
+
+.upi_con{
+    margin: 20px 0;
+}
+.upi_con>.upi_details{
+  
+    text-align: center;
+
+}
+.upi_details>input{
+    padding: 20px 10px;
+    width: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    font-size: 16px;
+}
+.upi_details a{
+    width: 30%;
+}
+.upi_details button{
+ width: 100%;  
+ padding: 15px 10px; 
+ background-color: #41b6ac;
+ border: none;
+border-radius: 5px;
+color: white;
+font-weight: bold;
+letter-spacing: 5px;
+font-size: 15px;
+margin-top: 10px;
+}
+.upi_details button:hover{
+    background-color: #238e85;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+.is-blurred {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    background-color: rgba(74, 74, 74, 0.349);
+    position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  }
+
+   .otp_hide{
+    display: none;
+   }
+   .error_msg{
+    color: red;
+    font-size: 11px;
+    margin: 10px 5px;
+   }
+.open_popup{
+   display: block;
+   }
