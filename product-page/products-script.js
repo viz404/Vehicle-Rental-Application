@@ -1166,3 +1166,8 @@ function referalcodefield() {
     //   </div>;
     console.log("Ready to show referal code field");
 }
+
+
+document.querySelector("#drivezy-logo").onclick = () => {
+    window.location.href = "/";
+}

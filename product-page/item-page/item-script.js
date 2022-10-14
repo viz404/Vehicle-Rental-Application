@@ -116,6 +116,10 @@ function getMonthDays(name) {
     }
 }
 
+document.querySelector("#drivezy-logo").onclick = () => {
+    window.location.href = "/";
+}
+
 // item section
 
 let car_name = document.querySelector("#car_name");

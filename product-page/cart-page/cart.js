@@ -87,3 +87,7 @@ checkout_btn.onclick = () => {
     localStorage.setItem("checkout_arr", JSON.stringify(cart_arr));
     window.location.href = "../../payment_page/checkOut.html"
 }
+
+document.querySelector("#drivezy-logo").onclick = () => {
+    window.location.href = "/";
+}
