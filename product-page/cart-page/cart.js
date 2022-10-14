@@ -85,4 +85,5 @@ function deleteItem(index) {
 let checkout_btn = document.querySelector("#checkout_btn");
 checkout_btn.onclick = () => {
     localStorage.setItem("checkout_arr", JSON.stringify(cart_arr));
+    window.location.href = "../../payment_page/checkOut.html"
 }
