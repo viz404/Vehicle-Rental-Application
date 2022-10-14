@@ -1,5 +1,10 @@
 let cart_arr = JSON.parse(localStorage.getItem("cart_arr")) || [];
 
+let home_btn = document.querySelector("#home_btn");
+home_btn.onclick = () => {
+    window.location.href = "/"
+}
+
 displayData(cart_arr);
 
 function displayData(arr) {
