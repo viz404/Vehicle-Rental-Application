@@ -490,9 +490,20 @@ let btn_mini_suv = document.querySelector("#btn-mini-suv")
 let curr_car = "";
 
 btn_hatch.onclick = () => {
+    filter_display.innerHTML = null;
     btn_sedan.removeAttribute("style");
     btn_suv.removeAttribute("style");
     btn_mini_suv.removeAttribute("style");
+    btn_manual.removeAttribute("style");
+    btn_diesel.removeAttribute("style");
+    btn_petrol.removeAttribute("style");
+    btn_auto.removeAttribute("style");
+    age_btn.removeAttribute("style");
+
+
+    if (btn_hatch.style.border == "1px solid rgb(18, 150, 126)") {
+        location.reload();
+    }
 
     btn_hatch.style.border = "1px solid #12967e";
     btn_hatch.style.color = "#12967e";
@@ -516,9 +527,19 @@ btn_hatch.onclick = () => {
 }
 
 btn_sedan.onclick = () => {
+    filter_display.innerHTML = null;
     btn_hatch.removeAttribute("style");
     btn_suv.removeAttribute("style");
     btn_mini_suv.removeAttribute("style");
+    btn_manual.removeAttribute("style");
+    btn_diesel.removeAttribute("style");
+    btn_petrol.removeAttribute("style");
+    btn_auto.removeAttribute("style");
+    age_btn.removeAttribute("style");
+
+    if (btn_sedan.style.border == "1px solid rgb(18, 150, 126)") {
+        location.reload();
+    }
 
     btn_sedan.style.border = "1px solid #12967e";
     btn_sedan.style.color = "#12967e";
@@ -542,9 +563,19 @@ btn_sedan.onclick = () => {
 }
 
 btn_suv.onclick = () => {
+    filter_display.innerHTML = null;
     btn_sedan.removeAttribute("style");
     btn_hatch.removeAttribute("style");
     btn_mini_suv.removeAttribute("style");
+    btn_manual.removeAttribute("style");
+    btn_diesel.removeAttribute("style");
+    btn_petrol.removeAttribute("style");
+    btn_auto.removeAttribute("style");
+    age_btn.removeAttribute("style");
+
+    if (btn_suv.style.border == "1px solid rgb(18, 150, 126)") {
+        location.reload();
+    }
 
     btn_suv.style.border = "1px solid #12967e";
     btn_suv.style.color = "#12967e";
@@ -568,9 +599,19 @@ btn_suv.onclick = () => {
 }
 
 btn_mini_suv.onclick = () => {
+    filter_display.innerHTML = null;
     btn_sedan.removeAttribute("style");
     btn_suv.removeAttribute("style");
     btn_hatch.removeAttribute("style");
+    btn_manual.removeAttribute("style");
+    btn_diesel.removeAttribute("style");
+    btn_petrol.removeAttribute("style");
+    btn_auto.removeAttribute("style");
+    age_btn.removeAttribute("style");
+
+    if (btn_mini_suv.style.border == "1px solid rgb(18, 150, 126)") {
+        location.reload();
+    }
 
     btn_mini_suv.style.border = "1px solid #12967e";
     btn_mini_suv.style.color = "#12967e";
