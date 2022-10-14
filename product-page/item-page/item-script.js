@@ -2,6 +2,7 @@ let search_query = JSON.parse(localStorage.getItem("search_query"));
 let select_item = JSON.parse(localStorage.getItem("select_item"));
 select_item.fuel_price = 0;
 localStorage.setItem("select_item", JSON.stringify(select_item));
+localStorage.setItem("quickBookFlag", 1);
 
 let car_icon = document.querySelector("#car-icon");
 let bike_icon = document.querySelector("#bike-icon");
@@ -248,7 +249,10 @@ book_btn.onclick = () => {
     select_item.drop_time = search_query.drop;
     select_item.location = search_query.location;
 
-    localStorage.setItem("checkout_arr", JSON.stringify(select_item));
+    let checkout_arr = [];
+    checkout_arr.push(select_item);
+    localStorage.setItem("quickBookFlag", 0);
+    localStorage.setItem("checkout_arr", JSON.stringify(checkout_arr));
 }
 
 
