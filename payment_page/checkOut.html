@@ -18,15 +18,85 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
-    <div>
-        <div class="div_anim">
-           <div>
-            <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg" alt="">
-            <lottie-player class="lot_anim_car" src="https://assets4.lottiefiles.com/private_files/lf30_hsabbeks.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
-           </div>
+    <!-- navbar -->
+    <div class="common header">
+      <div class="container">
+        <div class="leftbar">
+          <img
+            id="drivezy-logo"
+            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"
+            alt="drivezy-logo"
+          />
+          <div class="country">
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566564152_indiaflag.svg"
+              alt="country-india"
+            />
+            <p>India</p>
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+              alt="drop-down-arrow"
+            />
+          </div>
+          <div class="city">
+            <p id="cityBtn" class="btn">Bengaluru</p>
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+              alt="drop-down-arrow"
+            />
+          </div>
         </div>
+        <div class="rightbar">
+          <div class="earnwithus">
+            <p>Earn with Us</p>
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+              alt="drop-down-arrow"
+            />
+          </div>
+          <p>My Offers</p>
+          <div class="careers">
+            <p>Careers</p>
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
+              alt="drop-down-arrow"
+            />
+          </div>
+          <div class="myplans">
+            <img
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg"
+              alt="cart"
+            />
+            <p>My Plan</p>
+          </div>
+          <img
+            class="myprofile"
+            id="myBtn"
+            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
+            alt="profile"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="div_anim">
+        <div>
+          <img
+            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"
+            alt=""
+          />
+          <lottie-player
+            class="lot_anim_car"
+            src="https://assets4.lottiefiles.com/private_files/lf30_hsabbeks.json"
+            background="transparent"
+            speed="1"
+            style="width: 500px; height: 500px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </div>
       <div class="main_container">
-       
         <div class="checkout_con">
           <h2>Checkout Summary</h2>
           <div class="summary_con">
@@ -147,7 +217,15 @@
         </div>
 
         <div class="details_con open_popup" id="detail_con">
-            <lottie-player class="pay_anim" src="https://assets2.lottiefiles.com/packages/lf20_ltbqacam.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+          <lottie-player
+            class="pay_anim"
+            src="https://assets2.lottiefiles.com/packages/lf20_ltbqacam.json"
+            background="transparent"
+            speed="1"
+            style="width: 200px; height: 200px"
+            loop
+            autoplay
+          ></lottie-player>
           <div class="payment_popup">
             <!-- it is card popup -->
             <div class="card_popup open_popup" id="cards_popup">
@@ -156,7 +234,6 @@
                   <h4>Enter Card Details</h4>
                   <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
                 </div>
-              
               </div>
               <form action="" class="card_form" id="card_form">
                 <div class="card_number_con">
@@ -192,7 +269,9 @@
                   </div>
                 </div>
                 <div class="button_con">
-                  <button onclick="payAmount()" class="pay_btn">PAY INR <span id="spnFinalPrice"></span></button>
+                  <button onclick="payAmount()" class="pay_btn">
+                    PAY INR <span id="spnFinalPrice"></span>
+                  </button>
                 </div>
               </form>
               <form action="" class="card_form">
@@ -265,52 +344,53 @@
                     <h3>Axis Bank</h3>
                   </div>
                 </div>
-                
               </div>
             </div>
 
-             <!-- it is Mobile Wallet popup -->
-      <div class="card_popup" id="wallet_popup">
-        <div class="head_con">
-          <div class="head">
-            <h4>Select Bank Account</h4>
-            <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
-          </div>
-         
-        </div>
-        <div class="bank_con">
-          <div class="banks">
-            <div class="image">
-              <img
-                src="https://img1.zoomcar.com/images/original/91871c2e202fd271724063a4a38033612d37c219.png?1584602070"
-                alt=""
-              />
+            <!-- it is Mobile Wallet popup -->
+            <div class="card_popup" id="wallet_popup">
+              <div class="head_con">
+                <div class="head">
+                  <h4>Select Bank Account</h4>
+                  <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+                </div>
+              </div>
+              <div class="bank_con">
+                <div class="banks">
+                  <div class="image">
+                    <img
+                      src="https://img1.zoomcar.com/images/original/91871c2e202fd271724063a4a38033612d37c219.png?1584602070"
+                      alt=""
+                    />
+                  </div>
+                  <div class="bank_name">
+                    <h3>PayTM</h3>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="bank_name">
-              <h3>PayTM</h3>
-            </div>
-          </div>
-        </div>
-      </div>
 
-       <!-- it is UPI popup -->
-       <div class="card_popup" id="upi_popup">
-        <div class="head_con">
-          <div class="head">
-            <h4>Enter UPI ID</h4>
-            <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
-          </div>
-         
-        </div>
-        <div class="upi_con">
-          <div class="upi_details">
-            <input type="text" class="upi_id" placeholder="Enter UPI Id" />
-            <a href="">
-              <button class="verify_upi">VERIFY</button>
-            </a>
-          </div>
-        </div>
-      </div>
+            <!-- it is UPI popup -->
+            <div class="card_popup" id="upi_popup">
+              <div class="head_con">
+                <div class="head">
+                  <h4>Enter UPI ID</h4>
+                  <p>Amount: ₹ <span class="pFinalPrice">0</span></p>
+                </div>
+              </div>
+              <div class="upi_con">
+                <div class="upi_details">
+                  <input
+                    type="text"
+                    class="upi_id"
+                    placeholder="Enter UPI Id"
+                  />
+                  <a href="">
+                    <button class="verify_upi">VERIFY</button>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -318,7 +398,7 @@
   </body>
 </html>
 <script>
-
+  /*
   var arrItems = [
     {
       TripFare: 1000,
@@ -335,6 +415,10 @@
       Refund: 0,
     },
   ];
+  */
+
+  let checkout_arr = JSON.parse(localStorage.getItem("checkout_arr")) || [];
+  let quickBookFlag = localStorage.getItem("quickBookFlag") || 0;
 
   let txtPrice = document.getElementById("txtPrice");
   let txtFuel = document.getElementById("txtFuel");
@@ -356,27 +440,27 @@
   let divcardNumError = document.getElementById("divcardNumError");
   let divExpError = document.getElementById("divExpError");
   let divCvvError = document.getElementById("divCvvError");
-  let divotpError=document.getElementById("divotpError")
-  let inOtp=document.getElementById("inOtp")
-  let pFinalPrice=document.getElementsByClassName("pFinalPrice")
-  let details_con=document.getElementById("detail_con")
+  let divotpError = document.getElementById("divotpError");
+  let inOtp = document.getElementById("inOtp");
+  let pFinalPrice = document.getElementsByClassName("pFinalPrice");
+  let details_con = document.getElementById("detail_con");
   //₹
 
-  console.log(arrItems);
+  // console.log(arrItems);
 
   var otPrice = 0;
   var otFuel = 0;
   var otConFee = 0;
   var otRefund = 0;
 
-  otPrice = arrItems.reduce(function (total, elem) {
-    return total + elem.TripFare;
+  otPrice = checkout_arr.reduce(function (total, elem) {
+    return total + elem.price;
   }, 0);
-  otFuel = arrItems.reduce(function (total, elem) {
-    return total + elem.Fuel;
+  otFuel = checkout_arr.reduce(function (total, elem) {
+    return total + elem.fuel_price;
   }, 0);
-  otConFee = arrItems.reduce(function (total, elem) {
-    return total + elem.ConFee;
+  otConFee = checkout_arr.reduce(function (total, elem) {
+    return total + elem.con_fee;
   }, 0);
   console.log(otConFee);
   otTotal = otPrice + otFuel + otConFee;
@@ -390,8 +474,8 @@
   txtFinal.innerText = "₹ " + finalPrice;
   spnFinalPrice.innerText = "₹ " + finalPrice;
 
-  for(var i=0;i<pFinalPrice.length;i++){
-    pFinalPrice[i].innerText=finalPrice
+  for (var i = 0; i < pFinalPrice.length; i++) {
+    pFinalPrice[i].innerText = finalPrice;
   }
   function saveFinalPrice() {
     event.preventDefault();
@@ -400,37 +484,33 @@
   }
   //Functions for Payment method popups
   function showPopupCard() {
-    details_con.classList.add("open_popup")
+    details_con.classList.add("open_popup");
     cards_popup.classList.add("open_popup");
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.remove("open_popup");
     //console.log(popup)
- 
   }
   function showPopupNet() {
-    details_con.classList.add("open_popup")
+    details_con.classList.add("open_popup");
     cards_popup.classList.remove("open_popup");
     net_popup.classList.add("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.remove("open_popup");
-  
   }
   function showPopupWallet() {
-    details_con.classList.add("open_popup")
+    details_con.classList.add("open_popup");
     cards_popup.classList.remove("open_popup");
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.add("open_popup");
     upi_popup.classList.remove("open_popup");
-
   }
   function showPopupUpi() {
-    details_con.classList.add("open_popup")
+    details_con.classList.add("open_popup");
     cards_popup.classList.remove("open_popup");
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.add("open_popup");
-   
   }
 
   // Function to close the popups
@@ -439,11 +519,11 @@
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.remove("open_popup");
-    details_con.classList.remove("open_popup")
+    details_con.classList.remove("open_popup");
   }
-//Function for Pay Button
-//Function for Pay Button
-function payAmount() {
+  //Function for Pay Button
+  //Function for Pay Button
+  function payAmount() {
     event.preventDefault();
 
     let lenCrdno = inCardNo.value.length;
@@ -471,7 +551,7 @@ function payAmount() {
     console.log(lenCrdno, lenExpiry, lencvv);
   }
 
-  //Event listner for the Card Details input fields. to clear the error message 
+  //Event listner for the Card Details input fields. to clear the error message
   inCardNo.addEventListener("click", (event) => {
     divcardNumError.innerText = "";
   });
@@ -484,30 +564,33 @@ function payAmount() {
 
   inCardNo.onkeydown = function () {
     divcardNumError.innerText = "";
-}
-inExpiry.onkeydown = function () {
+  };
+  inExpiry.onkeydown = function () {
     divExpError.innerText = "";
-}
-inCvv.onkeydown=function(){
-    divCvvError.innerText=""
-}
-//Function for validating OTP
-let otpAttempt=3
-divotpError.innerText=otpAttempt+ " attempts Remaining"
-function otpValidate(){
-    event.preventDefault()
-    if(inOtp.value==1234){
-        alert("Payment Successful");
-            return;
-    }else{
-        alert("Wrong OTP number");
-        otpAttempt--;
-            divotpError.innerText=otpAttempt+ "Attempts Remaining"
+  };
+  inCvv.onkeydown = function () {
+    divCvvError.innerText = "";
+  };
+  //Function for validating OTP
+  let otpAttempt = 3;
+
+  function otpValidate() {
+    event.preventDefault();
+    if (inOtp.value == 7410) {
+      localStorage.removeItem("checkout_arr");
+      if (quickBookFlag == 1) {
+        localStorage.removeItem("cart_arr");
+      }
+      localStorage.removeItem("quickBookFlag");
+
+      window.location.replace("confirmation.html");
+      return;
+    } else {
+      alert("Wrong OTP number");
+      otpAttempt--;
+      divotpError.innerText = otpAttempt + " Attempts Remaining";
     }
 
-    if(otpAttempt<=0)return
-    
-
-}
-
+    if (otpAttempt <= 0) window.location.replace("payment_failed.html");
+  }
 </script>
