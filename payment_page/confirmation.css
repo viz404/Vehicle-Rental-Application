@@ -1,0 +1,54 @@
+@font-face {
+    font-family: proxima_nova;
+    src: url(/drivezy-clone/just_connect/Proxima-Nova.bf9f5d50.ttf);
+  }
+  /* general*/
+  * {
+    font-family: "proxima_nova";
+  }
+
+  .confirm_con{
+    width: 500px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+  }
+  .confirm_con>.anim{
+    text-align: center;
+    display: flex;
+
+  }
+  .anim>.success_anim{
+    margin: auto;
+  }
+  .thanks h2{
+    margin: 0;
+    font-size: 26px;
+    color: #f64d4d;
+  }
+  .caption {
+    color: #f64d4d;
+    font-size: 13px;
+    margin: 10px 0;
+    line-height: 16px;
+  }
+  .caption>.cap_email{
+    font-weight: bold;
+  }
+  .home_btn>button{
+    padding: 10px 40px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(38,193,233);
+    background: linear-gradient(135deg, rgba(38,193,233,1) 0%, rgba(110,16,141,1) 100%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .home_btn>button:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
