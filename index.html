@@ -243,7 +243,7 @@
     <!-- fixed bar section -->
     <div class="fixed">
         <h4>Heading out of town? Now nook a Drivezy in brand new cities ! 
-        <span id="cityBtn" style="text-decoration: underline; cursor:pointer" >
+        <span id="cityBtn">
         Click</span> to explore more
         <i class="fa-solid fa-xmark cancelBtn"></i>
         </h4>
@@ -288,7 +288,7 @@
                         <option value="Ashwath Nagar (HBR Layout)">Ashwath Nagar (HBR Layout)</option>
                     </select>
                 </div>
-                <button class="searchBtn" id="searchBtn">Search</button>
+                <input type="button" class="searchBtn" id="searchBtn" value="Search" />
             </div>
         </div>
     </div>
@@ -302,14 +302,14 @@
     <!-- airport rides section -->
     <div class="airport-rides">
         <div class="left-side">
-            <h2>BENGALURU AIRPORT RIDES</h2>
+            <h2 id="bold">BENGALURU AIRPORT RIDES</h2>
             <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566567805_Ridesat449.svg" alt="rieds-starting" />
-            <h4>
+            <h4 style="color:#77899b; line-height: 30px">
                 Bengaluru airport rides made easy with Drivezy. No need to book an<br>
                 expensive cab to or from Bengaluru airport. Hire a one-way car to or<br>
                 from Bengaluru airport and drive yourself at half the price
             </h4>
-            <h4 class="feature">This feature is only available on app.<span class="download">DOWNLOAD NOW</span></h4>
+            <h4 class="feature">This feature is only available on app. <span class="download" style="color:#009688; cursor:pointer">DOWNLOAD NOW</span></h4>
             <a href="airport_rides/airportRide.html"><button class="knowmoreBtn">KNOW MORE</button></a>
         </div>
         <div>
@@ -512,6 +512,7 @@
     closeEarnPop.addEventListener("click", closeEarn);
     function open() {
         earndialog.style.display = "block";
+        careerpop.style.display = "none";
     }
 
     function closeEarn() {
@@ -527,6 +528,7 @@
 
     function openDialog() {
         careerpop.style.display = "block";
+        earndialog.style.display = "none";
     }
     
     function closeCareer() {
@@ -542,6 +544,8 @@
 
     function openLogin() {
         loginPop.style.display = "block";
+        careerpop.style.display = "none";
+        earndialog.style.display = "none";
     }
     function closeLogin() {
         loginPop.style.display = "none";
@@ -590,7 +594,7 @@
 
         localStorage.setItem("search_query", JSON.stringify(obj));
 
-        window.location.href = "product-page/products-page.html"
+        
     }
     function addDays(date, days) {
         var result = new Date(date);
@@ -604,6 +608,19 @@
         loginFlag = 0;
         localStorage.setItem("loginFlag", 0);
         window.location.reload();
+    }
+
+    var searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", validate);
+    function validate() {
+        var input = document.getElementById("input-bar").value;
+        if(input == "") {
+            alert("Please select an option!");
+            //return false;
+        } else {
+            window.location.href = "product-page/products-page.html";
+        }
+        //return true;
     }
     // login signup page
     var numberofattempts=JSON.parse(localStorage.getItem("numberofattempts")) || 0;
@@ -623,10 +640,13 @@
         if(loginFlag == 1) {
             //console.log(loginFlag);
             modal.style.display = "none";
+            
             // loginPop.style.display = "block";
             openLogin();
         } else {
             modal.style.display = "block";
+            earndialog.style.display = "none";
+            careerpop.style.display = "none";
         }
       });
       // btn.onclick = function () {
