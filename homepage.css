@@ -640,6 +640,11 @@ ul > li {
     border-radius: 6px;
     padding: 15px;
   }
+  #proceed:hover{
+    background-color: #27716b;
+    cursor: pointer;
+    box-shadow: 0 2px 8px -2px rgb(31 45 61 / 60%);
+  }
   .modalheader {
     width: 100%;
     display: flex;
@@ -709,6 +714,7 @@ ul > li {
   .social-button img {
     height: 30px;
     border-radius: 4px;
+    box-shadow: 0 2px 8px -2px rgb(31 45 61 / 60%);
   }
   .input-label {
     margin-top: 20px;

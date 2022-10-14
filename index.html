@@ -9,8 +9,13 @@
 <script src="https://kit.fontawesome.com/2d42f35cf8.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
 
-    <title>Drivezy</title>
+    <title>Self Drive Car, Scooter & Bike Rentals in Bangalore | Drivezy</title>
     <link rel="stylesheet" href="homepage.css">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://drivezy.com/favicon.ico"
+    />
 </head>
 <body>
 <!-- navbar -->
@@ -59,7 +64,7 @@
           </div>
           <div class="modalbody">
             <div class="description">Welcome to drivezy!</div>
-            <form id="email_mobile_number">
+            <form id="email_mobile_number" onkeydown="verifyemailnumber(), verifypasswordpattern()">
               <div class="form-input form-width" id="form_input">
                 <label class="input-label">Email address / Phone</label
                 ><input
@@ -68,6 +73,7 @@
                   name="name"
                   required
                 />
+            <span id="message" style="color: red"> </span> <br /><br />
               </div>
               <div class="button_section" id="button_section">
                 <button id="proceed" type="submit">PROCEED</button>
@@ -702,6 +708,10 @@
           input_pass.setAttribute("id", "setpassword");
           input_pass.setAttribute("required","");
 
+          var passwinstspan=document.createElement("span");
+        passwinstspan.setAttribute("id","passintructions");
+        passwinstspan.style.color="red";
+
           var checkbox_div = document.createElement("div");
           checkbox_div.setAttribute("class", "checkbox-section");
 
@@ -754,6 +764,7 @@
             input_name,
             label_pass,
             input_pass,
+            passwinstspan,
             checkbox_div,
             div_floatinglabel
           );
@@ -826,10 +837,11 @@
         var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
         el1.preventDefault();
         var pass = document.getElementById("passwordfilled").value;
+        var email_number=document.getElementById("email_number").value;
         var flag = false;
         for (var i = 0; i < logindata.length; i++) {
           var elem = logindata[i];
-          if (elem.passwordset === pass) {
+          if (elem.passwordset === pass &&  email_number===elem.email_mobile_number) {
             console.log("user found");
             flag = true;
             var numberofattempts=0;
@@ -881,4 +893,52 @@
         //   </div>;
         console.log("Ready to show referal code field");
       }
+
+      //Modifications 14 oct 2022
+
+                 function verifyemailnumber() {
+              var email_number=document.getElementById("email_number").value;
+              console.log("enum verifier "+email_number+" "+email_number[0]);
+              if("1234567890".includes(email_number[0]) && "1234567890".includes(email_number[email_number.length-1])){
+                if(email_number.length!=10) {
+                  document.getElementById("message").innerHTML = "**Phone number length must be 10 digits";
+                  return false;
+              }
+              else{
+                document.getElementById("message").innerHTML = "";
+              }
+              
+              }
+              else{
+              //check empty password field
+                  if(email_number == "") {
+                    document.getElementById("message").innerHTML = "**Fill the phone number/Email address please!";
+                    return false;
+                  }
+
+                  if(!validateEmail(email_number)){
+                    document.getElementById("message").innerHTML = "**Fill valid Email address please!";
+                  }
+                  else{
+                    document.getElementById("message").innerHTML = "";
+                  }
+
+            }
+      }
+
+           function validateEmail(email) {
+             var re = /\S+@\S+\.\S+/;
+             return re.test(email);
+            }
+
+          function verifypasswordpattern(){
+            var setpassword=document.getElementById("setpassword").value;
+            if(setpassword.length<8) {
+                  document.getElementById("passintructions").innerHTML = "**Your password should contains atleast 8 characters";
+                  return false;
+              }
+              else{
+                document.getElementById("passintructions").innerHTML = "";
+              }
+          }  
 </script>
