@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drivezy</title>
     <link rel="stylesheet" href="products-style.css">
+    <script src="https://kit.fontawesome.com/2d42f35cf8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,11 +47,83 @@
                     <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
                     <p>My Plan</p>
                 </div>
-                <img id="myprofile" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
-                    alt="profile" />
+                <img class="myprofile" src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
+                    alt="profile" id="myBtn" />
             </div>
         </div>
     </div>
+
+    <!-- login-sign up page -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modalcontent">
+            <div class="modalheader">
+                Login/SignUp <span class="close">&times;</span>
+            </div>
+            <div class="modalbody">
+                <div class="description">Welcome to drivezy!</div>
+                <form id="email_mobile_number">
+                    <div class="form-input form-width" id="form_input">
+                        <label class="input-label">Email address / Phone</label><input class="input-box"
+                            id="email_number" name="name" required />
+                    </div>
+                    <div class="button_section" id="button_section">
+                        <button id="proceed" type="submit">PROCEED</button>
+                    </div>
+                </form>
+                <div class="center-text">
+                    <span class="line"></span><span class="or">Or</span><span class="line"></span>
+                </div>
+                <div class="social-login">
+                    <div id="gSigninBtn" class="social-button">
+                        <img onclick="googlelogin()" alt="google-login"
+                            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575931_google-button.png" />
+                    </div>
+                    <div class="social-button">
+                        <img onclick="facebooklogin()" alt="fb-login"
+                            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575846_facebook-button.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- login dropdown -->
+    <div class="login-pop">
+        <button class="closeLoginPop"><i class="fa-solid fa-xmark"></i></button>
+        <div class="myprofile">
+            <i class="fa-regular fa-user"></i>
+            <p>My profile</p>
+        </div>
+        <div class="mybookings">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>My bookings</p>
+        </div>
+        <div class="mycodrivers">
+            <i class="fa-regular fa-id-card"></i>
+            <p>My Co-Drivers</p>
+        </div>
+        <div class="mywallet">
+            <i class="fa-solid fa-wallet"></i>
+            <p>My Wallet</p>
+        </div>
+        <div class="mybank">
+            <i class="fa-solid fa-building-columns"></i>
+            <p>My Bank Details</p>
+        </div>
+        <div class="changepass">
+            <i class="fa-solid fa-unlock-keyhole"></i>
+            <p>Change Password</p>
+        </div>
+        <div class="logout" id="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <p>Log Out</p>
+        </div>
+    </div>
+
+
     <!-- search bar -->
     <section>
         <form method="post" class="search-bar">
@@ -163,9 +236,10 @@
                         </div>
                         <span>Engine capacity</span>
                         <div class="car-type-filter engine-capacity-filter">
-                            <button id="btn-110"><=110cc</button>
-                            <button id="btn-111">111-150cc</button>
-                            <button id="btn-150">>150cc</button>
+                            <button id="btn-110">
+                                <=110cc< /button>
+                                    <button id="btn-111">111-150cc</button>
+                                    <button id="btn-150">>150cc</button>
                         </div>
                     </div>
                 </section>
