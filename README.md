@@ -18,3 +18,8 @@ In this page you will get all the details like the pricing and all the details o
 This page will show all the vehicles that has been put in the cart. It also has an option for deleting the particular item from the cart and will show the total cart price. It contains the proceed to checkout page that will show different options to pay for the items present.
 # Payment Page
 After selecting the items this page will allow us to add the payment option like credit/debit card or netbanking or UPI for the payment. after recieving the details and the correct OTP it will show the option of payment successful.
+# Authors
+- [Nitika Garg](https://github.com/nitika02)
+- [Vishal Dinesh](https://github.com/viz404)
+- [Suhail-K](https://github.com/SUHAIL-K)
+- [PrathmeshVK](https://github.com/PrathmeshVK)
