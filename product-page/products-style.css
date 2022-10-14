@@ -89,6 +89,11 @@ h1 {
     margin-right: 30px;
 }
 
+.myplans a {
+    text-decoration: none;
+    color: black;
+}
+
 #drivezy-logo,
 .myprofile {
     cursor: pointer;
