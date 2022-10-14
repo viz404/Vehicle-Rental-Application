@@ -389,7 +389,7 @@
   }
 
   /* MEDIA  SCREEN */
-  @media screen and (min-width: 540px) and (max-width: 766px) {
+  @media screen and (min-width: 0px) and (max-width: 766px) {
     #container {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -408,6 +408,31 @@
     .con_image > .image {
       width: 40%;
       position: relative;
+    }
+    .just_connect {
+      display: block;
+      justify-content: space-around;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 3%;
+  
+      
+    }
+    .just_connect > .container {
+      width: 28%;
+      padding: 25px 25px 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  
+  
+    }
+    #div_top {
+      display: block;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 5%;
     }
   }
   
