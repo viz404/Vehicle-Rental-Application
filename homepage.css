@@ -58,6 +58,18 @@ body {
 .leftbar, .rightbar {
     display: flex;
 }
+.shade_big{
+    font-size: 100px;
+    color: #d2d0d02f;
+    position: relative;
+    top: 75px;
+    font-weight: 600;
+    left: -20px;
+}
+#spBoldhead{
+    font-weight: bold;
+    color: #f15d61;
+}
 .country {
     display: flex;
     margin-left: 30px;
@@ -349,6 +361,9 @@ ul > li {
     background-size: 400px 150px;
     background-position: center;
     background-position-x: 400px;
+    background: rgb(255,255,255);
+background: linear-gradient(135deg, rgba(255,255,255,1) 35%, rgba(241,243,245,1) 100%);
+
 }
 
 #phone {
