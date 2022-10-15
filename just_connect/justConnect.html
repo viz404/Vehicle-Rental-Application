@@ -22,7 +22,7 @@
         <div class="common header">
           <div class="container_nav">
               <div class="leftbar">
-                  <a href="index.html">
+                  <a href="\">
                       <img id = "drivezy-logo"src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"  alt="drivezy-logo" />
                   </a>
                   <div class="country">
@@ -268,9 +268,10 @@
             growing mobility platform - JustConnect to turn them into earning
             members of your family.
           </p>
-          <button onclick="showGetListed()" class="get_list_button">
+          <a href="justConnect-form.html"> <button class="get_list_button">
             GET LISTED
-          </button>
+          </button></a>
+         
         </div>
         <div id="div_t2">
           <img
@@ -419,9 +420,9 @@
       </div>
       <!-- get list button -->
       <div class="get_list">
-        <button onclick="showGetListed()" class="get_list_button">
+        <a href="justConnect-form.html"> <button class="get_list_button">
           GET LISTED
-        </button>
+        </button></a>
       </div>
       <!-- sucess stories session -->
       <div class="con_success_story">
@@ -1092,7 +1093,8 @@
 
 
   function showGetListed() {
-    var myWindow = window.open("justconnect-form.html", "_self");
+    event.preventDefault()
+    window.open("justconnect-form.html", "_self");
   }
 
   let slideIndex = 1;
