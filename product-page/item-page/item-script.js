@@ -244,7 +244,8 @@ cart_btn.onclick = () => {
         alert("Item already exists");
     } else {
         cart_arr.push(select_item);
-        alert("Item successfully added to cart")
+        alert("Item successfully added to cart");
+        window.location.href = "/product-page/products-page.html";
     }
 
     localStorage.setItem("cart_arr", JSON.stringify(cart_arr));

@@ -288,6 +288,7 @@ function displayData(arr) {
 
         img_container.setAttribute("class", "img-container");
         img.setAttribute("src", element.img);
+        img.style.zIndex = "0";
         span.textContent = "₹" + element.price;
         img_desc.setAttribute("class", "img-desc");
         h3.textContent = element.vehicle_name;
