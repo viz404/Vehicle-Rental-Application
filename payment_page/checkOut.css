@@ -60,12 +60,17 @@
   .main_container>.details_con{
     width: 400px;
     background-color: #f15d61;
+    
   
 
 
   }
   .details_con>.pay_anim{
     margin: auto;
+  }
+
+  .hide_pay_anim{
+    display: none;
   }
   .checkout_con>.summary_con{
    
@@ -186,6 +191,7 @@
 .details_con>.payment_popup{
     margin: auto;
     display: flex;
+    margin-top: 10px;
 }
 /*Card Payment */
 .card_popup{
@@ -229,6 +235,7 @@
     border: none;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    letter-spacing: 3px;
 }
 .card_popup>.card_form>.card_det_con{
 
@@ -249,6 +256,7 @@
     border: none;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    letter-spacing: 4px;
 }
 .card_popup>.button_con{
     margin: 10px 0;
@@ -433,3 +441,26 @@ body {
 #drivezy-logo {
     margin-left: 70px;
 }
+
+
+  /* MEDIA  SCREEN */
+  @media screen and (min-width: 0px) and (max-width: 766px){
+    body>div:nth-child(2){
+        display: block;
+    
+        margin: auto;
+        justify-content: space-around;
+    
+      }
+      .main_container{
+        display: block;
+      }
+      .checkout_con{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .details_con{
+        margin-left: auto;
+        margin-right: auto;
+      }
+  }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Self Drive Car, Scooter & Bike Rentals in Bangalore | Drivezy</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -46,39 +46,10 @@
             />
           </div>
         </div>
-        <div class="rightbar">
-          <div class="earnwithus">
-            <p>Earn with Us</p>
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
-            />
-          </div>
-          <p>My Offers</p>
-          <div class="careers">
-            <p>Careers</p>
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
-            />
-          </div>
-          <div class="myplans">
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg"
-              alt="cart"
-            />
-            <p>My Plan</p>
-          </div>
-          <img
-            class="myprofile"
-            id="myBtn"
-            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
-            alt="profile"
-          />
-        </div>
+        
       </div>
     </div>
-    <div>
+    <div class="check_maindiv">
       <div class="div_anim">
         <div>
           <img
@@ -169,7 +140,7 @@
                   />
                 </div>
                 <div class="payment_details">
-                  <h4>Credit / Debit / ATM Card</h4>
+                  <h4>Credit / Debit Cards</h4>
                   <p>All major card providers are supported</p>
                 </div>
               </div>
@@ -218,7 +189,7 @@
 
         <div class="details_con open_popup" id="detail_con">
           <lottie-player
-            class="pay_anim"
+            class="pay_anim" id="anim_pay"
             src="https://assets2.lottiefiles.com/packages/lf20_ltbqacam.json"
             background="transparent"
             speed="1"
@@ -444,6 +415,7 @@
   let inOtp = document.getElementById("inOtp");
   let pFinalPrice = document.getElementsByClassName("pFinalPrice");
   let details_con = document.getElementById("detail_con");
+  let anim_pay=document.getElementById("anim_pay")
   //₹
 
   // console.log(arrItems);
@@ -489,6 +461,7 @@
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.remove("open_popup");
+    anim_pay.classList.remove("hide_pay_anim")
     //console.log(popup)
   }
   function showPopupNet() {
@@ -497,6 +470,7 @@
     net_popup.classList.add("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.remove("open_popup");
+    anim_pay.classList.remove("hide_pay_anim")
   }
   function showPopupWallet() {
     details_con.classList.add("open_popup");
@@ -504,6 +478,7 @@
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.add("open_popup");
     upi_popup.classList.remove("open_popup");
+    anim_pay.classList.remove("hide_pay_anim")
   }
   function showPopupUpi() {
     details_con.classList.add("open_popup");
@@ -511,6 +486,7 @@
     net_popup.classList.remove("open_popup");
     wallet_popup.classList.remove("open_popup");
     upi_popup.classList.add("open_popup");
+    anim_pay.classList.remove("hide_pay_anim")
   }
 
   // Function to close the popups
@@ -545,6 +521,7 @@
     }
 
     if (flagValid) {
+      anim_pay.classList.add("hide_pay_anim")
       div_otp_btn.classList.remove("otp_hide");
       div_otp.classList.remove("otp_hide");
     }

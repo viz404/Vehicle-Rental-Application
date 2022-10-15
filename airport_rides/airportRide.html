@@ -17,66 +17,244 @@
     ></script>
   </head>
   <body>
-     <!-- navbar -->
-     <div class="common header">
-      <div class="container">
+  <!-- navbar -->
+  <div class="common header">
+    <div class="container_nav">
         <div class="leftbar">
-          <img
-            id="drivezy-logo"
-            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"
-            alt="drivezy-logo"
-          />
-
-          <div class="country">
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566564152_indiaflag.svg"
-              alt="country-india"
-            />
-            <p>India</p>
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
-            />
-          </div>
-          <div class="city">
-            <p id="cityBtn" class="btn">Bengaluru</p>
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
-            />
-          </div>
+            <a href="index.html">
+                <img id = "drivezy-logo"src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566911193_Drivezyheaderfulllogo.svg"  alt="drivezy-logo" />
+            </a>
+            <div class="country">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566564152_indiaflag.svg" alt="country-india"/>
+                <p>India</p>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+            </div>
+            <div class="city">
+                <p id="cityBtn" class="btn">Bengaluru</p>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+            </div>
         </div>
         <div class="rightbar">
-          <div class="earnwithus">
-            <p>Earn with Us</p>
+            <div class="earnwithus">
+                <p>Earn with Us</p>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+            </div>
+            <p>My Offers</p>
+            <div class="careers">
+                <p>Careers</p>
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg" alt="drop-down-arrow" />
+            </div>
+            <div class="myplans">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg" alt="cart" />
+                <p>My Plan</p>
+            </div>
+                <img class="myprofile" id="myBtn" 
+                src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg" 
+                alt="profile" />
+        </div>
+    </div>
+</div>
+      <!-- login-sign up page -->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modalcontent">
+      <div class="modalheader">
+        Login/SignUp <span class="close">&times;</span>
+      </div>
+      <div class="modalbody">
+        <div class="description">Welcome to drivezy!</div>
+        <form id="email_mobile_number" onkeydown="verifyemailnumber(), verifypasswordpattern()">
+          <div class="form-input form-width" id="form_input">
+            <label class="input-label">Email address / Phone</label
+            ><input
+              class="input-box"
+              id="email_number"
+              name="name"
+              required
+            />
+        <span id="message" style="color: red"> </span> <br /><br />
+          </div>
+          <div class="button_section" id="button_section">
+            <button id="proceed" type="submit">PROCEED</button>
+          </div>
+        </form>
+        <div class="center-text">
+          <span class="line"></span><span class="or">Or</span
+          ><span class="line"></span>
+        </div>
+        <div class="social-login">
+          <div id="gSigninBtn" class="social-button">
             <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
+              onclick="googlelogin()"
+              alt="google-login"
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575931_google-button.png"
             />
           </div>
-          <p>My Offers</p>
-          <div class="careers">
-            <p>Careers</p>
+          <div class="social-button">
             <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566562781_down_arrow.svg"
-              alt="drop-down-arrow"
+              onclick="facebooklogin()"
+              alt="fb-login"
+              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1569575846_facebook-button.png"
             />
           </div>
-          <div class="myplans">
-            <img
-              src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1568179217_plan.svg"
-              alt="cart"
-            />
-            <p>My Plan</p>
-          </div>
-          <img
-            id="myprofile"
-            src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1566206159_profile.svg"
-            alt="profile"
-          />
         </div>
       </div>
     </div>
+  </div>
+
+<!-- earn with us popover --> 
+<div class="earn-pop">
+    <button class="closeEarnPop"><i class="fa-solid fa-xmark"></i></button>
+    <div class="share-business">
+        <i class="fa-solid fa-handshake"></i>
+        <p>Share-A-Business become a franchise partner</p>
+    </div>
+    <div class="list-vehicle">
+        <i class="fa-solid fa-cable-car"></i>
+        <p>List your Vehicle</p>
+    </div>
+</div>
+
+<!-- careers popover --> 
+<div class="careers-pop">
+    <button class="closeCareerPop"><i class="fa-solid fa-xmark"></i></button>
+    <div class="jobs">
+        <i class="fa-solid fa-user-doctor"></i>
+        <p>Jobs</p>
+    </div>
+    <div class="people">
+        <i class="fa-solid fa-people-line"></i>
+        <p>People</p>
+    </div>
+    <div class="culture">
+        <i class="fa-solid fa-kaaba"></i>
+        <p>Culture</p>
+    </div>
+</div>
+
+<!-- login dropdown -->
+<div class="login-pop">
+    <button class="closeLoginPop"><i class="fa-solid fa-xmark"></i></button>
+    <div class="myprofile">
+        <i class="fa-regular fa-user"></i>
+        <p>My profile</p>
+    </div>
+    <div class="mybookings">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <p>My bookings</p>
+    </div>
+    <div class="mycodrivers">
+        <i class="fa-regular fa-id-card"></i>
+        <p>My Co-Drivers</p>
+    </div>
+    <div class="mywallet">
+        <i class="fa-solid fa-wallet"></i>
+        <p>My Wallet</p>
+    </div>
+    <div class="mybank">
+        <i class="fa-solid fa-building-columns"></i>
+        <p>My Bank Details</p>
+    </div>
+    <div class="changepass">
+        <i class="fa-solid fa-unlock-keyhole"></i>
+        <p>Change Password</p>
+    </div>
+    <div class="logout" id="logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p>Log Out</p>
+    </div>
+</div>
+
+<!-- city modal section -->
+<div id="citymodal" class="city-modal">
+    <div class="city-content">
+        <div class="preferred-city">
+            <h2>Choose your preferred city</h2>
+            <span class="closeBtn">&times;</span>
+        </div>
+        <div class="city-grid">
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046172_Mumbai.png" />
+                <button>Mumbai</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559045955_Bengaluru.png" />
+                <button id="bengaluruBtn">Bengaluru</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046253_Pune.png" />
+                <button>Pune</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046199_Mysuru.png" />
+                <button>Mysuru</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1573798997_Goa-08%282%29.png" />
+                <button>Goa</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046065_Hyderabad.png" />
+                <button>Hyderabad</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046143_Manipal.png" />
+                <button>Manipal</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046230_Nagpur.png" />
+                <button>Nagpur</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046035_Hubli.png" />
+                <button>Hubli</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559045988_Delhi.png" />
+                <button>Delhi</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1591282133_amritsar-icon.png" />
+                <button>Amritsar</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1591282188_chandigarh-icon.png" />
+                <button>Chandigarh</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1593417424_bhubaneshwar.png" />
+                <button>Bhubaneshwar</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1596116007_jaipur.png" />
+                <button>Jaipur</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1592656739_coimbatore-icon.png" />
+                <button>Tirupur</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1559046253_Pune.png" />
+                <button>Amravati</button>
+            </div>
+            <div class="city-item">
+                <img src="https://jtride-data.s3.ap-south-1.amazonaws.com/uploads/1593417447_vizag.png" />
+                <button>Guntur</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- fixed bar section -->
+<div class="fixed">
+    <h4>Heading out of town? Now nook a Drivezy in brand new cities ! 
+    <span id="cityBtn">
+    Click</span> to explore more
+    <i class="fa-solid fa-xmark cancelBtn"></i>
+    </h4>
+
+</div>
     <div class="main_div">
       <div class="airport_head">
         <div class="con_left">
@@ -345,6 +523,420 @@
   </body>
 </html>
 <script>
+
+
+
+let loginFlag = localStorage.getItem("loginFlag") || 0;
+     var cancelBtn = document.getElementsByClassName("cancelBtn")[0];
+    var fixed = document.getElementsByClassName("fixed")[0];
+    cancelBtn.addEventListener("click", fixedVan);
+    function fixedVan() {
+        fixed.style.display = "none";
+    }
+
+    var cityModal = document.getElementById("citymodal");
+
+    var modalBtn = document.getElementById("cityBtn");
+
+    var closeBtn = document.getElementsByClassName("closeBtn")[0];
+
+    modalBtn.addEventListener("click", openmodal);
+    closeBtn.addEventListener("click", closemodal);
+
+    function openmodal() {
+        cityModal.style.display = "block";
+    }
+
+    function closemodal() {
+        cityModal.style.display = "none";
+    }
+    var opendialog1 = document.getElementsByClassName("earnwithus")[0];
+    var earndialog = document.getElementsByClassName("earn-pop")[0];
+    var closeEarnPop = document.getElementsByClassName("closeEarnPop")[0];
+    
+    opendialog1.addEventListener("click", open);
+    closeEarnPop.addEventListener("click", closeEarn);
+    function open() {
+        earndialog.style.display = "block";
+        careerpop.style.display = "none";
+    }
+
+    function closeEarn() {
+        earndialog.style.display = "none";
+    }
+
+    var careerdialog = document.getElementsByClassName("careers")[0];
+    var careerpop = document.getElementsByClassName("careers-pop")[0];
+    var closeCareerPop = document.getElementsByClassName("closeCareerPop")[0];
+
+    careerdialog.addEventListener("click", openDialog);
+    closeCareerPop.addEventListener("click", closeCareer);
+
+    function openDialog() {
+        careerpop.style.display = "block";
+        earndialog.style.display = "none";
+    }
+    
+    function closeCareer() {
+        careerpop.style.display = "none";
+    }
+
+    var login = document.getElementsByClassName("myprofile")[0];
+    var loginPop = document.getElementsByClassName("login-pop")[0];
+    var closeLoginPop = document.getElementsByClassName("closeLoginPop")[0];
+
+    //login.addEventListener("click", openLogin);
+    closeLoginPop.addEventListener("click", closeLogin);
+    function openLogin() {
+        loginPop.style.display = "block";
+        careerpop.style.display = "none";
+        earndialog.style.display = "none";
+    }
+    function closeLogin() {
+        loginPop.style.display = "none";
+    }
+   
+    var logout = document.getElementById("logout");
+    logout.addEventListener("click", logoutLogin);
+    function logoutLogin() {
+        loginFlag = 0;
+        localStorage.setItem("loginFlag", 0);
+        window.location.reload();
+    }
+    function validate() {
+        var input = document.getElementById("input-bar").value;
+        if(input == "") {
+            alert("Please select an option!");
+            //return false;
+        } else {
+            window.location.href = "product-page/products-page.html";
+        }
+        //return true;
+    }
+    // login signup page
+    var numberofattempts=JSON.parse(localStorage.getItem("numberofattempts")) || 0;
+      localStorage.setItem("numberofattempts", 0);
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.addEventListener("click", function () {
+        //console.log(loginFlag);
+        if(loginFlag == 1) {
+            //console.log(loginFlag);
+            modal.style.display = "none";
+            
+            // loginPop.style.display = "block";
+            openLogin();
+        } else {
+            modal.style.display = "block";
+            earndialog.style.display = "none";
+            careerpop.style.display = "none";
+        }
+      });
+      // btn.onclick = function () {
+      //   modal.style.display = "block";
+      // };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      // window.onclick = function (event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // };
+      console.log("Number of attempts before enter code: "+JSON.parse(localStorage.getItem("numberofattempts")));
+
+      //Add event listener
+      var emarr = JSON.parse(localStorage.getItem("emarr")) || [];
+      document
+        .querySelector("#email_mobile_number")
+        .addEventListener("submit", getlogindata);
+        var flag_enteredonetime=false;
+      function getlogindata(e) {
+        e.preventDefault();
+        var email_mobile_number = document.getElementById("email_number").value;
+        console.log("email number entered: "+email_mobile_number);
+        console.log("email number entered present in AD: "+emarr.includes(email_mobile_number));
+        if (!emarr.includes(email_mobile_number)) {
+          emarr.push(email_mobile_number);
+          localStorage.setItem("emarr", JSON.stringify(emarr));
+          var div_name = document.createElement("div");
+          div_name.setAttribute("class", "form-input form-width");
+          div_name.setAttribute("id", "inputname");
+
+          var label_name = document.createElement("label");
+          label_name.setAttribute("class", "input-label");
+          label_name.innerText = "Enter name";
+
+          var input_name = document.createElement("input");
+          input_name.setAttribute("class", "input-box");
+          input_name.setAttribute("id", "userinputname");
+          input_name.setAttribute("required","");
+
+          var label_pass = document.createElement("label");
+          label_pass.setAttribute("class", "input-label");
+          label_pass.innerText = "Enter Password";
+
+          var input_pass = document.createElement("input");
+          input_pass.setAttribute("class", "input-box");
+          input_pass.setAttribute("id", "setpassword");
+          input_pass.setAttribute("required","");
+
+          var passwinstspan=document.createElement("span");
+        passwinstspan.setAttribute("id","passintructions");
+        passwinstspan.style.color="red";
+
+          var checkbox_div = document.createElement("div");
+          checkbox_div.setAttribute("class", "checkbox-section");
+
+          var label_checkbox = document.createElement("label");
+          label_checkbox.setAttribute("class", "checkbox-container");
+          var checkbox_input = document.createElement("input");
+          checkbox_input.setAttribute("type", "checkbox");
+          checkbox_input.setAttribute("id", "checkboxid");
+          var checkboxspan = document.createElement("span");
+          checkboxspan.setAttribute("class", "marked");
+          checkboxspan.setAttribute("onClick", "referalcodefield()");
+
+          var textspan = document.createElement("span");
+          textspan.innerText = "I have a referral code";
+          label_checkbox.append(checkbox_input, checkboxspan, textspan);
+          checkbox_div.append(label_checkbox);
+
+          var div_floatinglabel = document.createElement("div");
+          div_floatinglabel.setAttribute("class", "floating-label form-width");
+          div_floatinglabel.setAttribute("id", "referaldiv");
+
+          var input_floating = document.createElement("input");
+          input_floating.setAttribute("class", "input-box");
+          input_floating.setAttribute("id", "floatinginput");
+          input_floating.setAttribute("autocomplete","off");
+          input_floating.setAttribute("type","text");
+          input_floating.setAttribute("placeholder","Referral Code")
+
+          div_floatinglabel.style.display="none";
+          checkbox_input.addEventListener("click", function handleClick(){
+            if(checkbox_input.checked){
+              div_floatinglabel.style.display="block";
+            }
+            else{
+              div_floatinglabel.style.display="none";
+            }
+          });
+
+          var floatingspan = document.createElement("span");
+          floatingspan.setAttribute("class", "highlight");
+
+          var floatinglabel = document.createElement("label");
+          floatinglabel.setAttribute("class", "input-label");
+          floatinglabel.innerText = "";
+
+          div_floatinglabel.append(input_floating,floatingspan, floatinglabel);
+
+          div_name.append(
+            label_name,
+            input_name,
+            label_pass,
+            input_pass,
+            passwinstspan,
+            checkbox_div,
+            div_floatinglabel
+          );
+          document.querySelector("#form_input").append(div_name);
+          document
+            .querySelector("#email_mobile_number")
+            .addEventListener("submit", savelogindata);
+        } else {
+          console.log("email number entered present in AD: "+emarr.includes(email_mobile_number) +" Now creating password box as attempts are "+JSON.parse(localStorage.getItem("numberofattempts")));
+          if(JSON.parse(localStorage.getItem("numberofattempts"))==0){
+            console.log("Now creating password box as attempts are 0");
+            numberofattempts=JSON.parse(localStorage.getItem("numberofattempts"));
+            
+          localStorage.setItem("numberofattempts", JSON.stringify(1));
+          var div_pass = document.createElement("div");
+          div_pass.setAttribute("class", "form-input form-width");
+          div_pass.setAttribute("id", "inputpass");
+
+          var label_pass = document.createElement("label");
+          label_pass.setAttribute("class", "input-label");
+          label_pass.innerText = "Enter password";
+
+          var input_pass = document.createElement("input");
+          input_pass.setAttribute("class", "input-box");
+          input_pass.setAttribute("id", "passwordfilled");
+          input_pass.setAttribute("required","");
+
+          div_pass.append(label_pass, input_pass);
+          document.querySelector("#form_input").append(div_pass);
+          document
+            .querySelector("#email_mobile_number")
+            .addEventListener("submit", verifypass)}
+          
+        }
+
+        // localStorage.setItem("emarr", JSON.stringify(emarr));
+        console.log(emarr);
+
+      }
+
+      function savelogindata(el2) {
+        var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
+        el2.preventDefault();
+        console.log(document.getElementById("userinputname").value);
+        var obj = {
+          email_mobile_number: document.getElementById("email_number").value,
+          name: document.getElementById("userinputname").value,
+
+          passwordset: document.getElementById("setpassword").value,
+        };
+        logindata.push(obj);
+        localStorage.setItem("logindata", JSON.stringify(logindata));
+        numberofattempts = 0;
+        console.log(logindata);
+        document.getElementById("form_input").innerText = "";
+        alert("Sign in Successful, Welcome to website");
+        window.location.reload();
+        document.getElementsByClassName("close")[0].click();
+        console.log(logindata);
+        getlogindata();
+      }
+
+      function getpassword(el) {
+        el.preventDefault();
+
+        console.log("added event listener to get password");
+      }
+    //   let loginFlag = localStorage.getItem("loginFlag") || 0;
+      function verifypass(el1) {
+        var logindata = JSON.parse(localStorage.getItem("logindata")) || [];
+        el1.preventDefault();
+        var pass = document.getElementById("passwordfilled").value;
+        var email_number=document.getElementById("email_number").value;
+        var flag = false;
+        for (var i = 0; i < logindata.length; i++) {
+          var elem = logindata[i];
+          if (elem.passwordset === pass &&  email_number===elem.email_mobile_number) {
+            console.log("user found");
+            flag = true;
+            var numberofattempts=0;
+            localStorage.setItem("numberofattempts",JSON.stringify(0));
+            alert("Login successful");
+            document.getElementsByClassName("close")[0].click();
+            localStorage.setItem("loginFlag", 1);
+            loginFlag = 1;
+            modal.style.display = "none";
+            location.reload();
+            break;
+          }
+        }
+        if (flag === false) {
+          flag_enteredonetime=true;
+          document.getElementById("inputpass").value="";
+          alert("Please enter correct password");
+        }
+        
+        document.getElementById("inputpass").value="";
+
+      }
+
+      //Google login once clicking on google
+      function googlelogin() {
+        window.location.href = 
+          "https://accounts.google.com/v3/signin/identifier?dsh=S168818674%3A1665509543051224&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWrKlcSBI-487kngVP56jKrjRW-BDhy6ow5bh8_cz5daqOmQ5LoWb2DSF-3JGcw6mKHNVo2r",
+          "_blank"
+        ;
+      }
+      function facebooklogin() {
+        window.location.href = 
+          "https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjY1NTA5NTkzLCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D",
+          "_blank"
+        ;
+      }
+
+      function referalcodefield() {
+        //   <div class="floating-label form-width">
+        //     <input
+        //       class="floating-input"
+        //       type="text"
+        //       placeholder=" "
+        //       autocomplete="off"
+        //       value=""
+        //     />
+        //     <span class="highlight"></span>
+        //     <label>Referral Code</label>
+        //   </div>;
+        console.log("Ready to show referal code field");
+      }
+
+      //Modifications 14 oct 2022
+
+                 function verifyemailnumber() {
+              var email_number=document.getElementById("email_number").value;
+              console.log("enum verifier "+email_number+" "+email_number[0]);
+              if("1234567890".includes(email_number[0]) && "1234567890".includes(email_number[email_number.length-1])){
+                if(email_number.length!=10) {
+                  document.getElementById("message").innerHTML = "**Phone number length must be 10 digits";
+                  return false;
+              }
+              else{
+                document.getElementById("message").innerHTML = "";
+              }
+              
+              }
+              else{
+              //check empty password field
+                  if(email_number == "") {
+                    document.getElementById("message").innerHTML = "**Fill the phone number/Email address please!";
+                    return false;
+                  }
+
+                  if(!validateEmail(email_number)){
+                    document.getElementById("message").innerHTML = "**Fill valid Email address please!";
+                  }
+                  else{
+                    document.getElementById("message").innerHTML = "";
+                  }
+
+            }
+      }
+
+           function validateEmail(email) {
+             var re = /\S+@\S+\.\S+/;
+             return re.test(email);
+            }
+
+          function verifypasswordpattern(){
+            var setpassword=document.getElementById("setpassword").value;
+            if(setpassword.length<8) {
+                  document.getElementById("passintructions").innerHTML = "**Your password should contains atleast 8 characters";
+                  return false;
+              }
+              else{
+                document.getElementById("passintructions").innerHTML = "";
+              }
+          }  
+
+        //   14/10/22 adding quickbook flag
+        localStorage.setItem("quickBookFlag", 1);
+
+
+
+
+
+
+
+        
   function appStore() {
     window.open("https://itunes.apple.com/in/app/drivezy/id1048221336?mt=8");
   }
