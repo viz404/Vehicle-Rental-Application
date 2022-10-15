@@ -23,3 +23,5 @@ After selecting the items this page will allow us to add the payment option like
 - [Vishal Dinesh](https://github.com/viz404)
 - [Suhail-K](https://github.com/SUHAIL-K)
 - [PrathmeshVK](https://github.com/PrathmeshVK)
+# Deployment
+Have a look at the site: Drivezy(https://drivezy-clone.netlify.app)
